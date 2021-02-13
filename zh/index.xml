@@ -17,8 +17,9 @@ App会导入您的照片和视频，并且提示您需要登录 点击右上角�
 Docker安装
 构建自己的镜像
 Docker安装 # 请参考 lomo-docker安装Docker镜像。请使用arm的镜像&amp;quot;lomorage/raspberrypi-lomorage:latest&amp;quot;。
-构建自己的镜像 # 下面的步骤应该对于所有Armbain官方支持的SBC都适用，但如果您发现有问题，请联系我们。
+构建自己的镜像 # 下面的步骤应该对于所有Armbian官方支持的SBC都适用，但如果您发现有问题，请联系我们。
 这里有已经编译好的 Orange Pi Zero的 镜像。
+Armbian默认的用户名是&amp;quot;lomoware&amp;quot;，密码是&amp;quot;lomorage&amp;quot;。
 1. 准备编译环境 # 如果您使用Ubuntu Focal 20.04.x amd64，可以跳过这一步。
 下载安装 Vagrant.
 安装可以调整存储空间大小的插件:
