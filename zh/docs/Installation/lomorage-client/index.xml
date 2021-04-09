@@ -5,9 +5,20 @@
 安装完Lomorage客户端，启动就可以自动发现同一网络中运行的Lomorage服务，如果您有多台Lomorage服务运行，那些会列举出来供选择。如果未能自动发现服务，您可以选择扫码的方式登陆（Lomorage服务运行在Windows或者MacOS下，打开LomoAgent设置），或者手动输入IP地址和端口。
 然后您可以创建用户，选择存储目录，登陆后，会花上几分钟来导入您相册的照片和视频，然后您可以选择需要上传的文件进行备份，如果已经备份成功，图片或视频下会显示一个绿色的小勾。在远程的选项卡里，显示的是远程备份过但本地没有的文件，所以如果您删除掉本地成功备份的文件，它们会显示在远程备份里面。</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</guid><description>安装Lomorage安卓手机App
 #
-您可以在安卓手机上安卓Lomorage App，目前的Lomorage App是开发预览版，最低支持的安卓系统版本是7.1，正式版会很快发布，欢迎关注Lomorage公众号。
-欢迎提供反馈，我们会不断更新我们的软件， 点击下面的图标下载最新中文版
+您可以在安卓手机上安卓Lomorage App，最低支持的安卓系统版本是7.1。
+最近更新：2021-04-09
+#
+增加了隐私说明 增加了当用户点击拒绝权限时的提示 修复了发送email 有时没有 App 日志的问题 更多请查看 Lomorage Github
+下载
+#
+欢迎提供反馈，我们会不断更新我们的软件，点击下面的图标下载最新中文版
+直接下载APK
 --
+快速使用介绍视频
+#
+点击去B站观看
+--
+点击去Youtube观看
 Lomorage 是一款个人私有照片和视频备份工具，它方便的把您的照片和视频备份到Windows PC机或者Apple MAC机，也可以备份到Lomorage 定制的树莓派上。 您需要在Windows 或者 Mac 或者 树莓派上安装 Lomorage 服务程序。
 安装完Lomorage客户端，可能需要花一两分钟时间导入您的视频和照片。然后在Manage Account界面可以创建账号，登录，下拉备份您的照片和视频，还可以和您的家人进行分享。
 App会导入您的照片和视频，并且提示您需要登录

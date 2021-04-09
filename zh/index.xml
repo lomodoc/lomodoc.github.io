@@ -24,9 +24,20 @@ Raspberry Pi
 下载了系统镜像后, 你可以使用
 balenaEtcher将其安装到MicroSD卡, balenaEtcher提供Windows和macOS版本。</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</guid><description>安装Lomorage安卓手机App
 #
-您可以在安卓手机上安卓Lomorage App，目前的Lomorage App是开发预览版，最低支持的安卓系统版本是7.1，正式版会很快发布，欢迎关注Lomorage公众号。
-欢迎提供反馈，我们会不断更新我们的软件， 点击下面的图标下载最新中文版
+您可以在安卓手机上安卓Lomorage App，最低支持的安卓系统版本是7.1。
+最近更新：2021-04-09
+#
+增加了隐私说明 增加了当用户点击拒绝权限时的提示 修复了发送email 有时没有 App 日志的问题 更多请查看 Lomorage Github
+下载
+#
+欢迎提供反馈，我们会不断更新我们的软件，点击下面的图标下载最新中文版
+直接下载APK
 --
+快速使用介绍视频
+#
+点击去B站观看
+--
+点击去Youtube观看
 Lomorage 是一款个人私有照片和视频备份工具，它方便的把您的照片和视频备份到Windows PC机或者Apple MAC机，也可以备份到Lomorage 定制的树莓派上。 您需要在Windows 或者 Mac 或者 树莓派上安装 Lomorage 服务程序。
 安装完Lomorage客户端，可能需要花一两分钟时间导入您的视频和照片。然后在Manage Account界面可以创建账号，登录，下拉备份您的照片和视频，还可以和您的家人进行分享。
 App会导入您的照片和视频，并且提示您需要登录
