@@ -56,6 +56,7 @@ sudo apt update 2. 安装Lomorage
 #
 您至少需要安装lomo-vips,lomo-base-lite和lomo-backend。</description></item><item><title>Windows</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</guid><description>在Windows上安装Lomorage服务程序
 #
+（最近更新：2021/04/26）
 1. 点击下面的链接安装Lomorage服务程序。
 点击下载 ==
 Windows
