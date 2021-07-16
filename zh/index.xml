@@ -26,7 +26,7 @@ Raspberry Pi
 balenaEtcher将其安装到MicroSD卡, balenaEtcher提供Windows和macOS版本。</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</guid><description>安装Lomorage安卓手机App
 #
 您可以在安卓手机上安卓Lomorage App，最低支持的安卓系统版本是7.1。
-最近更新：2021-06-10
+最近更新：2021-07-16
 #
 增加了隐私说明 增加了当用户点击拒绝权限时的提示 修复了发送email 有时没有 App 日志的问题 更多请查看 Lomorage Github
 下载
@@ -46,7 +46,10 @@ App会导入您的照片和视频，并且提示您需要登录
 在 备份 栏目，你可以长按选中然后分享给您的家人
 通过 Members 选项来查看所有的用户
 通过 Inbox 来查看您的家人通过Lomorage 系统分享给您的照片和视频
-您可以在设置页配置您的远程访问和冗余备份，并且发送反馈</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
+您可以在设置页配置您的远程访问和冗余备份，并且发送反馈
+选择需要备份的目录
+#
+点击右上角菜单，选择“本机文件夹管理”选择你想要备份的目录</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
 #
 可以有两种安装方式:
 Docker安装
@@ -101,11 +104,12 @@ Windows
 2. 双击&amp;quot;lomoagent.msi&amp;quot;开始安装。如果有Windows Defender提示未知应用，请参考如下步骤允许安装程序运行。
 3. 勾选&amp;quot;最终用户许可协议&amp;quot;后，一路完成安装步骤。
 4. 双击桌面的LomoAgent图标，启动应用程序，如果有防火墙提示，请允许LomoAgent访问私有网络。
-5. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
+5. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。
+如果您使用苹果手机拍摄使用的HEVC/HEIF格式，请下载HEVC/HEIF扩展插件，参考https://blog.csdn.net/weixin_43168190/article/details/117698977</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
 #
 1. 点击下面的链接安装Lomorage服务程序。
 macOS
-如果上面链接无法访问，也可以从百度网盘下载: 链接: https://pan.baidu.com/s/1SkCo-zzvgAC_GzugVaZVbw 提取码: wj35
+如果上面链接无法访问，也可以从百度网盘下载: 链接: https://pan.baidu.com/s/1MVIfj65_ftvAHrIlz7qedQ 提取码: ji2d
 2. 双击&amp;quot;LomoAgent.dmg&amp;quot;开始安装，参考下面步骤完成安装。
 3. 运行应用程序LomoAgent，如果有防火墙提示，请允许LomoAgent访问网络。
 4. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。除此之前您也可以再多选择一个冗余备份目录，系统会每天定时进行冗余备份。</description></item><item><title>Docker</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/</guid><description>Docker安装

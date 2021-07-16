@@ -5,7 +5,7 @@ You can install the application on either iPad or iPhone, the minimum iOS versio
 After launching Lomorage, it should be able to discover the Lomorage service running in the same network. If you have multiple Lomorage service instances running, those will be listed and you can choose one to use. If Lomorage service can&amp;rsquo;t be discovered automatically, you can discover the service via QRCode Scanning when using Windows or MacOS LomoAgent (open settings in LomoAgent to show the QRCode), or you can input the IP address and port manually.</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-andriod/</guid><description>Install Lomorage App in Android phone
 #
 Currently you can install the app on Android phone, the minimal version is 7.1.
-Latest update：2021-06-10
+Latest update：2021-07-16
 #
 Click below icon to go to Goole Play Store to download.
 Directly download APK
