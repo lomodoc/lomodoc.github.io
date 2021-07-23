@@ -49,9 +49,9 @@ APT安装
 当前我们只支持x86/AMD64 Ubuntu 18.04.5 LTS (Bionic Beaver)和Ubuntu 20.04.1 LTS (Focal Fossa)。
 1. 安装lomoware源
 #
-sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh wget -qO - https://raw.githubusercontent.com/lomoware/lomoware.github.io/master/debian/gpg.key | sudo apt-key add - 如果您使用Bionic:
-echo &amp;#34;deb https://lomoware.github.io/debian/bionic bionic main&amp;#34; | sudo tee /etc/apt/sources.list.d/lomoware.list 如果您使用focal:
-echo &amp;#34;deb https://lomoware.github.io/debian/focal focal main&amp;#34; | sudo tee /etc/apt/sources.list.d/lomoware.list 然后运行:
+sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh wget -qO - https://lomoware.lomorage.com/debian/gpg.key | sudo apt-key add - 如果您使用Bionic:
+echo &amp;#34;deb https://lomoware.lomorage.com/debian/bionic bionic main&amp;#34; | sudo tee /etc/apt/sources.list.d/lomoware.list 如果您使用focal:
+echo &amp;#34;deb https://lomoware.lomorage.com/debian/focal focal main&amp;#34; | sudo tee /etc/apt/sources.list.d/lomoware.list 然后运行:
 sudo apt update 2. 安装Lomorage
 #
 您至少需要安装lomo-vips,lomo-base-lite和lomo-backend。</description></item><item><title>Windows</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</guid><description>在Windows上安装Lomorage服务程序

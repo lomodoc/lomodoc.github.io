@@ -11,13 +11,9 @@ Raspberry Pi Zero W
 Raspberry Pi 2 Model B If you don&amp;rsquo;t have one yet, we would recommend the newer version, which gives better performance. The minimum set you need includes:</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-andriod/</guid><description>Install Lomorage App in Android phone
 #
 Currently you can install the app on Android phone, the minimal version is 7.1.
-Latest update：2021-07-16
+Latest update：：2021-07-22
 #
-Click below icon to go to Goole Play Store to download.
-Directly download APK
---
-After launching Lomorage, it will take a few minutes to import all your photos and videos on phone in the first time.
-Then you can click the right up more menu to Manage account.</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
+Fix remote config testing crash issue Add refresh to fetch new remote asset in backup page Add App new versio reminder with badge red icon in setting page Import Google Fire Base Save local directory setting to external folder in case re-install Applied new material theme Add hash value in more info on big photo view Click below icon to go to Goole Play Store to download.</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
 #
 You have two options to install:
 Docker installation
@@ -37,7 +33,7 @@ APT installation
 Currently we only support x86/AMD64 Ubuntu 18.04.5 LTS (Bionic Beaver) and Ubuntu 20.04.1 LTS (Focal Fossa).
 1. Add lomoware source
 #
-sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh wget -qO - https://raw.</description></item><item><title>Web</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</guid><description>Install Lomorage Web client
+sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh wget -qO - https://lomoware.</description></item><item><title>Web</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</guid><description>Install Lomorage Web client
 #
 You can use Lomorage Web client to upload photos/videos from desktop/laptop using browser, and you can use the gallery to view the photos/videos stored in Lomorage.
 If you are using Lomorage Service in MacOS, then you can just click &amp;ldquo;import&amp;rdquo; menu item in LomoAgent Application, and it will open the web application.

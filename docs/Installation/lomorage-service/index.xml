@@ -24,7 +24,7 @@ APT installation
 Currently we only support x86/AMD64 Ubuntu 18.04.5 LTS (Bionic Beaver) and Ubuntu 20.04.1 LTS (Focal Fossa).
 1. Add lomoware source
 #
-sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh wget -qO - https://raw.</description></item><item><title>Windows</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-win/</guid><description>Install Lomorage Service on Windows
+sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh wget -qO - https://lomoware.</description></item><item><title>Windows</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-win/</guid><description>Install Lomorage Service on Windows
 #
 （Update：06/15/2021）
 1. Click the Windows icon link below to download Lomorage Server For Windows.
