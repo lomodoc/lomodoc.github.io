@@ -26,11 +26,9 @@ Raspberry Pi
 balenaEtcher将其安装到MicroSD卡, balenaEtcher提供Windows和macOS版本。</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</guid><description>安装Lomorage安卓手机App
 #
 您可以在安卓手机上安卓Lomorage App，最低支持的安卓系统版本是7.1。
-最近更新：2021-07-22
+最近更新：2021-08-07
 #
-修复了用户反馈的问题：远程连接崩溃 增加了备份页面刷新获取另外设备上传的照片 增加了App版本更新：设置有徽章提醒 引入了分析报告 App端目录配置移到共享文件夹：重新安装之后依然有效 应用了Material主题 增加了查看资源Hash值，方便确认是否重复照片 2021-07-16
-#
-增加了隐私说明 增加了当用户点击拒绝权限时的提示 修复了发送email 有时没有 App 日志的问题 更多请查看 Lomorage Github
+修复：目录过滤重复问题 修复：在android11上日志不能创建问题 更多请查看 Lomorage Github
 下载
 #
 请 从 Google Play Store 或者本官网下载最新 APK。
@@ -43,7 +41,16 @@ balenaEtcher将其安装到MicroSD卡, balenaEtcher提供Windows和macOS版本�
 点击去Youtube观看
 --
 Lomorage 是一款个人私有照片和视频备份工具，它方便的把您的照片和视频备份到Windows PC机或者Apple MAC机，也可以备份到Lomorage 定制的树莓派上。 您需要在Windows 或者 Mac 或者 树莓派上安装 Lomorage 服务程序。
-安装完Lomorage客户端，可能需要花一两分钟时间导入您的视频和照片。然后在Manage Account界面可以创建账号，登录，下拉备份您的照片和视频，还可以和您的家人进行分享。</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
+安装完Lomorage客户端，可能需要花一两分钟时间导入您的视频和照片。然后在Manage Account界面可以创建账号，登录，下拉备份您的照片和视频，还可以和您的家人进行分享。
+App会导入您的照片和视频，并且提示您需要登录
+点击右上角的菜单，进入账号管理界面. 在那里，App会自动发现您的Lomorage服务器程序 然后创建账号，登录。您也可以通过二维码扫描您的Lomorage服务器程序. （如果您用的是Windows或者Mac的Lomorage 服务程序） 下来开始备份您的照片和视频 可以选择过滤选项来查看您要的照片和视频
+在 备份 栏目，你可以长按选中然后分享给您的家人
+通过 Members 选项来查看所有的用户
+通过 Inbox 来查看您的家人通过Lomorage 系统分享给您的照片和视频
+您可以在设置页配置您的远程访问和冗余备份，并且发送反馈
+选择需要备份的目录
+#
+点击右上角菜单，选择“本机文件夹管理”选择你想要备份的目录</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
 #
 可以有两种安装方式:
 Docker安装
