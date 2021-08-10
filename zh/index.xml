@@ -96,17 +96,30 @@ sudo apt update sudo apt install lomo-web 然后您可以在电脑的浏览器�
 http://raspberrypi-lomorage.local:8001&amp;quot;，打开Lomorage网页客户端。
 登陆用户名和密码是您用手机Lomorage APP生成的用户名和密码</description></item><item><title>Windows</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</guid><description>在Windows上安装Lomorage服务程序
 #
-（最近更新：2021/06/15）
+（最近更新：2021/08/09）
 1. 点击下面的链接安装Lomorage服务程序。
+#
 点击下载 ==
 Windows
 如果上面链接无法访问，也可以点击
 这里下载
 2. 双击&amp;quot;lomoagent.msi&amp;quot;开始安装。如果有Windows Defender提示未知应用，请参考如下步骤允许安装程序运行。
+#
 3. 勾选&amp;quot;最终用户许可协议&amp;quot;后，一路完成安装步骤。
+#
 4. 双击桌面的LomoAgent图标，启动应用程序，如果有防火墙提示，请允许LomoAgent访问私有网络。
+#
 5. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。
-如果您使用苹果手机拍摄使用的HEVC/HEIF格式，请下载HEVC/HEIF扩展插件，参考https://blog.csdn.net/weixin_43168190/article/details/117698977</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
+#
+6. 可以点击托盘图标右键菜单，选择“导入” 可以打开网页客户端进行导入和浏览您已经备份的照片！
+#
+7. 重置用户密码
+#
+托盘右键菜单，选择 “重置用户密码”，按照界面提示操作。
+8. 高级设置：
+#
+托盘右键菜单 “advances”，打开配置文件，可以配置 网页客户端 端口号。
+{ &amp;#34;autoHideWindow&amp;#34;: false, &amp;#34;autoStartRedundancyBackup&amp;#34;: false, &amp;#34;autoStarted&amp;#34;: false, &amp;#34;enableBackupDir&amp;#34;: true, &amp;#34;isDebug&amp;#34;: false, &amp;#34;mountDir&amp;#34;: &amp;#34;C:\\Users\\Administrator\\Documents\\lomodata&amp;#34;, &amp;#34;mountDirBk&amp;#34;: &amp;#34;H:\\test-bk&amp;#34;, &amp;#34;port&amp;#34;: 8000, &amp;#34;runAsService&amp;#34;: false, &amp;#34;webport&amp;#34;: 8003 // 网页客户端端口号 } 您可以在另一台同网络内的机器（比如A机器）上访问该服务器B（安装了Lomorage服务器的机器为B），可以在A机器上的浏览器输入： http://B机器的ip:端口号。 比如： B 服务器的IP地址是 192.</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
 #
 1. 点击下面的链接安装Lomorage服务程序。
 macOS
