@@ -26,9 +26,9 @@ Raspberry Pi
 balenaEtcher将其安装到MicroSD卡, balenaEtcher提供Windows和macOS版本。</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/</guid><description>安装Lomorage安卓手机App
 #
 您可以在安卓手机上安卓Lomorage App，最低支持的安卓系统版本是7.1。
-最近更新：2021-08-24
+最近更新：2021-08-26
 #
-修复：下载和查看原始图片问题 更多请查看 Lomorage Github
+修复: 查看原始图片问题 更多请查看 Lomorage Github
 下载
 #
 请 从 Google Play Store 或者本官网下载最新 APK。
