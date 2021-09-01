@@ -57,7 +57,10 @@ sudo apt update 2. 安装Lomorage
 您至少需要安装lomo-vips,lomo-base-lite和lomo-backend。</description></item><item><title>Windows</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</guid><description>在Windows上安装Lomorage服务程序
 #
 （最近更新：2021/08/30）
-修复 中文目录问题 修复 不能禁止自动启动问题 改为 64位 更新了 lomo web 完整的菜单翻译 修复 不能设置目录的问题！！！ 1. 点击下面的链接安装Lomorage服务程序。
+修复 中文目录问题 修复 不能禁止自动启动问题 改为 64位 更新了 lomo web 完整的菜单翻译 修复 不能设置目录的问题！！！ 如何升级？（以后会改为自动升级，请稍后）
+#
+请在控制面板里删除lomorage server。 千万不要用 360 等工具来删除，那样可能会把数据文件删掉！！！
+然后下载新的MSI 安装包 1. 点击下面的链接安装Lomorage服务程序。
 #
 点击下载 == Windows 如果上面链接无法访问，也可以点击
 这里下载
@@ -73,11 +76,7 @@ sudo apt update 2. 安装Lomorage
 #
 7. 重置用户密码
 #
-托盘右键菜单，选择 “重置用户密码”，按照界面提示操作。
-8. 高级设置：
-#
-托盘右键菜单 “advances”，打开配置文件，可以配置 网页客户端 端口号。
-{ &amp;#34;autoHideWindow&amp;#34;: false, &amp;#34;autoStartRedundancyBackup&amp;#34;: false, &amp;#34;autoStarted&amp;#34;: false, &amp;#34;enableBackupDir&amp;#34;: true, &amp;#34;isDebug&amp;#34;: false, &amp;#34;mountDir&amp;#34;: &amp;#34;C:\\Users\\Administrator\\Documents\\lomodata&amp;#34;, &amp;#34;mountDirBk&amp;#34;: &amp;#34;H:\\test-bk&amp;#34;, &amp;#34;port&amp;#34;: 8000, &amp;#34;runAsService&amp;#34;: false, &amp;#34;webport&amp;#34;: 8003 // 网页客户端端口号 } 您可以在另一台同网络内的机器（比如A机器）上访问该服务器B（安装了Lomorage服务器的机器为B），可以在A机器上的浏览器输入： http://B机器的ip:端口号。 比如： B 服务器的IP地址是 192.</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
+托盘右键菜单，选择 “重置用户密码”，按照界面提示操作。</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
 #
 1. 点击下面的链接安装Lomorage服务程序。
 macOS
