@@ -96,16 +96,11 @@ sudo apt update sudo apt install lomo-web 然后您可以在电脑的浏览器�
 http://raspberrypi-lomorage.local:8001&amp;quot;，打开Lomorage网页客户端。
 登陆用户名和密码是您用手机Lomorage APP生成的用户名和密码</description></item><item><title>Windows</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</guid><description>在Windows上安装Lomorage服务程序
 #
-（最近更新：2021/08/15）
-修复 不能设置目录的问题！！！ 1. 点击下面的链接安装Lomorage服务程序。
+（最近更新：2021/08/30）
+修复 中文目录问题 修复 不能禁止自动启动问题 改为 64位 更新了 lomo web 完整的菜单翻译 修复 不能设置目录的问题！！！ 1. 点击下面的链接安装Lomorage服务程序。
 #
-点击下载 ==
-Windows
-如果上面链接无法访问，也可以点击
+点击下载 == Windows 如果上面链接无法访问，也可以点击
 这里下载
-或者从
-百度网盘下载 提取码：9f82
-或者从这里 点击下载
 2. 双击&amp;quot;lomoagent.msi&amp;quot;开始安装。如果有Windows Defender提示未知应用，请参考如下步骤允许安装程序运行。
 #
 3. 勾选&amp;quot;最终用户许可协议&amp;quot;后，一路完成安装步骤。
