@@ -56,8 +56,8 @@ sudo apt update 2. 安装Lomorage
 #
 您至少需要安装lomo-vips,lomo-base-lite和lomo-backend。</description></item><item><title>Windows</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</guid><description>在Windows上安装Lomorage服务程序
 #
-（最近更新：2021/08/30）
-修复 中文目录问题 修复 不能禁止自动启动问题 改为 64位 更新了 lomo web 完整的菜单翻译 修复 不能设置目录的问题！！！ 如何升级？（以后会改为自动升级，请稍后）
+（最近更新：2021/09/15）
+升级了 lomo-web 服务程序 如何升级？（以后会改为自动升级，请稍后）
 #
 请在控制面板里删除lomorage server。 千万不要用 360 等工具来删除，那样可能会把数据文件删掉！！！
 然后下载新的MSI 安装包 1. 点击下面的链接安装Lomorage服务程序。
@@ -76,7 +76,10 @@ sudo apt update 2. 安装Lomorage
 #
 7. 重置用户密码
 #
-托盘右键菜单，选择 “重置用户密码”，按照界面提示操作。</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
+托盘右键菜单，选择 “重置用户密码”，按照界面提示操作。
+8. 高级设置：
+#
+托盘右键菜单 “advances”，打开配置文件，可以配置 网页客户端 端口号。</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
 #
 1. 点击下面的链接安装Lomorage服务程序。
 macOS
