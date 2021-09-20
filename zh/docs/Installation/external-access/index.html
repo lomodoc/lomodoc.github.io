@@ -1,0 +1,353 @@
+<!doctype html><html lang=zh dir=ltr>
+<head>
+<meta name=generator content="Hugo 0.88.1">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="外网访问设置 #  外网访问需要一点技术背景来进行手工设置，我们后续的版本会让这个设置更加简单。
+外网访问依赖于隧道连接服务来实现内网穿透，现有一些服务提供商提供免费的服务，大多数隧道服务都需要下载客户端，运行在您的设备上，同公网的隧道服务器建立连接，并分配子域名，当通过子域名进行访问时，隧道服务就会将请求转发到您的应用程序。
+您可以使用 ngrok，ngrok是免费的隧道服务，需要注册，使用自定义子域名需要付费，但更加稳定，并没有额外的依赖。
+另外的方案：如果您自己有域名，可以直接在路由器上打开端口映射并且配置https代理访问Lomorage服务。
+如果您使用Lomorage的树莓派镜像, 登陆的用户名是&#34;pi&#34;，密码是&#34;raspberry&#34;; 如果您使用Lomorage的Armbian镜像, 登陆的用户名是&#34;lomoware&#34;，密码是&#34;lomorage&#34;;  ngrok (方案1) #  1. 注册 #   注册ngrok，完成后，会显示&#34;设置和安装&#34;页面.
+2. 下载 #  ngrok只有一个二进制文件，您可以下载特定平台的版本。
+如果您使用树莓派，您需要在&#34;设置和安装&#34;页面中拷贝Linux(ARM)版本的链接，当前是&#34;https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip&#34;, 您可以通过&#34;wget&#34;来下载。
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip 3. 安装 #  解压缩得到二进制可执行文件。在Windows或macOS下，您可以双击解压，如果您使用树莓派，可以使用unzip命令
+unzip ngrok-stable-linux-arm.zip 4. 连接您的账号 #  在&#34;设置和安装&#34;页面的第三步会显示&#34;authtoken&#34;，您需要在命令行窗口中运行如下命令将&#34;authtoken&#34;添加到配置文件。
+./ngrok authtoken [your-authtoken-show-in-step-3] 5. 运行ngrok #  Lomorage服务默认运行在8000端口，ngrok的免费账号不能自定义子域名，ngrok运行成功后，会自动绑定一个随机子域名，这个子域名在下次ngrok重新启动时会变化。
+./ngrok http 8000  6. 在Lomorage手机应用中配置隧道服务 #  打开Lomorage手机应用，在配置选项页里找到&#34;外网服务&#34;，设置服务器地址为ngrok输出的url，比如类似&#34;2e30eea5.ngrok.io&#34;，端口号是&#34;443&#34;。
+Nginx https代理 (方案2) #  如果您已经有域名，可以使用这种方式。
+下面以Linux平台为例子，certbox和nginx都是跨平台软件，其他平台安装配置类似。
+1. 安装certbot和nginx #  $ sudo apt-get install certbot python-certbot-nginx -y 2.">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="外网访问">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://docs.lomorage.com/zh/docs/Installation/external-access/"><meta property="og:site_name" content="Lomorage文档">
+<title>外网访问 | Lomorage文档</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=alternate hreflang=en href=https://docs.lomorage.com/docs/Installation/external-access/ title="External Access">
+<link rel=stylesheet href=/book.min.44268c67a11d75c5d005aae92bc2c1514b11ff4ae89cacfb3fc009d4e3af0224.css integrity="sha256-RCaMZ6EddcXQBarpK8LBUUsR/0ronKz7P8AJ1OOvAiQ=">
+<script defer src=/zh.search.min.f95a38eeaabba12ac90f92171a7ab6d2a63e0732ce9e8d354b1cc984eb41eb13.js integrity="sha256-+Vo47qq7oSrJD5IXGnq20qY+BzLOno01SxzJhOtB6xM="></script>
+<script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk="></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-138235951-2','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<link rel=alternate type=application/rss+xml href=https://docs.lomorage.com/zh/docs/Installation/external-access/index.xml title=Lomorage文档>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a href=/zh><span>Lomorage文档</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<a href=https://docs.lomorage.com/zh/docs/Roadmap/>产品路线图</a>
+<ul>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://docs.lomorage.com/zh/docs/Highlight/>功能</a>
+<ul>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://docs.lomorage.com/zh/docs/Installation/>安装</a>
+<ul>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/>Lomorage服务</a>
+<ul>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-raspbian/>Raspbian</a>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/>Armbian</a>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-ubuntu/>Ubuntu</a>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/>Windows</a>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/>OSX</a>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/>Docker</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/>Lomorage客户端</a>
+<ul>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-ios/>iOS</a>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-andriod/>Andriod</a>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-web/>Web</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomo-frame/>Lomorage相框</a>
+<ul>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://docs.lomorage.com/zh/docs/Installation/external-access/ class=active>外网访问</a>
+<ul>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-importer/>导入工具</a>
+<ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/lomorage/homepage target=_blank rel=noopener>
+Github
+</a>
+</li>
+<li>
+<a href=https://lomorage.com target=_blank rel=noopener>
+主页
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>外网访问</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#外网访问设置>外网访问设置</a>
+<ul>
+<li><a href=#ngrok-方案1>ngrok (方案1)</a>
+<ul>
+<li><a href=#1-注册>1. 注册</a></li>
+<li><a href=#2-下载>2. 下载</a></li>
+<li><a href=#3-安装>3. 安装</a></li>
+<li><a href=#4-连接您的账号>4. 连接您的账号</a></li>
+<li><a href=#5-运行ngrok>5. 运行ngrok</a></li>
+<li><a href=#6-在lomorage手机应用中配置隧道服务>6. 在Lomorage手机应用中配置隧道服务</a></li>
+</ul>
+</li>
+<li><a href=#nginx-https代理-方案2>Nginx https代理 (方案2)</a></li>
+<li><a href=#1-安装certbot和nginx>1. 安装certbot和nginx</a></li>
+<li><a href=#2-生成证书>2. 生成证书</a></li>
+<li><a href=#3-配置nginx>3. 配置nginx</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=外网访问设置>
+外网访问设置
+<a class=anchor href=#%e5%a4%96%e7%bd%91%e8%ae%bf%e9%97%ae%e8%ae%be%e7%bd%ae>#</a>
+</h1>
+<p>外网访问需要一点技术背景来进行手工设置，我们后续的版本会让这个设置更加简单。</p>
+<p>外网访问依赖于隧道连接服务来实现内网穿透，现有一些服务提供商提供免费的服务，大多数隧道服务都需要下载客户端，运行在您的设备上，同公网的隧道服务器建立连接，并分配子域名，当通过子域名进行访问时，隧道服务就会将请求转发到您的应用程序。</p>
+<p>您可以使用
+<a href=https://ngrok.com>ngrok</a>，ngrok是免费的隧道服务，需要注册，使用自定义子域名需要付费，但更加稳定，并没有额外的依赖。</p>
+<p>另外的方案：如果您自己有域名，可以直接在路由器上打开端口映射并且配置https代理访问Lomorage服务。</p>
+<blockquote class="book-hint info">
+如果您使用Lomorage的树莓派镜像, 登陆的用户名是"pi"，密码是"raspberry";
+如果您使用Lomorage的Armbian镜像, 登陆的用户名是"lomoware"，密码是"lomorage";
+</blockquote>
+<h2 id=ngrok-方案1>
+ngrok (方案1)
+<a class=anchor href=#ngrok-%e6%96%b9%e6%a1%881>#</a>
+</h2>
+<h3 id=1-注册>
+1. 注册
+<a class=anchor href=#1-%e6%b3%a8%e5%86%8c>#</a>
+</h3>
+<p>
+<a href=https://dashboard.ngrok.com/signup>注册</a>ngrok，完成后，会显示"设置和安装"页面.</p>
+<h3 id=2-下载>
+2. 下载
+<a class=anchor href=#2-%e4%b8%8b%e8%bd%bd>#</a>
+</h3>
+<p>ngrok只有一个二进制文件，您可以下载特定平台的版本。</p>
+<p>如果您使用树莓派，您需要在"设置和安装"页面中拷贝Linux(ARM)版本的链接，当前是"https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip", 您可以通过"wget"来下载。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
+</code></pre></div><h3 id=3-安装>
+3. 安装
+<a class=anchor href=#3-%e5%ae%89%e8%a3%85>#</a>
+</h3>
+<p>解压缩得到二进制可执行文件。在Windows或macOS下，您可以双击解压，如果您使用树莓派，可以使用unzip命令</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>unzip ngrok-stable-linux-arm.zip
+</code></pre></div><h3 id=4-连接您的账号>
+4. 连接您的账号
+<a class=anchor href=#4-%e8%bf%9e%e6%8e%a5%e6%82%a8%e7%9a%84%e8%b4%a6%e5%8f%b7>#</a>
+</h3>
+<p>在"设置和安装"页面的第三步会显示"authtoken"，您需要在<strong>命令行窗口</strong>中运行如下命令将"authtoken"添加到配置文件。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>./ngrok authtoken <span style=color:#f92672>[</span>your-authtoken-show-in-step-3<span style=color:#f92672>]</span>
+</code></pre></div><h3 id=5-运行ngrok>
+5. 运行ngrok
+<a class=anchor href=#5-%e8%bf%90%e8%a1%8cngrok>#</a>
+</h3>
+<p>Lomorage服务默认运行在8000端口，ngrok的免费账号不能自定义子域名，ngrok运行成功后，会自动绑定一个随机子域名，这个子域名在下次ngrok重新启动时会变化。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>./ngrok http <span style=color:#ae81ff>8000</span>
+</code></pre></div><script id=asciicast-265359 src=https://asciinema.org/a/265359.js async></script>
+<h3 id=6-在lomorage手机应用中配置隧道服务>
+6. 在Lomorage手机应用中配置隧道服务
+<a class=anchor href=#6-%e5%9c%a8lomorage%e6%89%8b%e6%9c%ba%e5%ba%94%e7%94%a8%e4%b8%ad%e9%85%8d%e7%bd%ae%e9%9a%a7%e9%81%93%e6%9c%8d%e5%8a%a1>#</a>
+</h3>
+<p>打开Lomorage手机应用，在配置选项页里找到"外网服务"，设置服务器地址为ngrok输出的url，比如类似"2e30eea5.ngrok.io"，端口号是"443"。</p>
+<h2 id=nginx-https代理-方案2>
+Nginx https代理 (方案2)
+<a class=anchor href=#nginx-https%e4%bb%a3%e7%90%86-%e6%96%b9%e6%a1%882>#</a>
+</h2>
+<p>如果您已经有域名，可以使用这种方式。</p>
+<p>下面以Linux平台为例子，certbox和nginx都是跨平台软件，其他平台安装配置类似。</p>
+<h2 id=1-安装certbot和nginx>
+1. 安装certbot和nginx
+<a class=anchor href=#1-%e5%ae%89%e8%a3%85certbot%e5%92%8cnginx>#</a>
+</h2>
+<pre tabindex=0><code>$ sudo apt-get install certbot python-certbot-nginx -y
+</code></pre><h2 id=2-生成证书>
+2. 生成证书
+<a class=anchor href=#2-%e7%94%9f%e6%88%90%e8%af%81%e4%b9%a6>#</a>
+</h2>
+<p>首先确保域名配置正确，然后在路由器上打开端口映射，将外网TCP80端口和443端口分别映射到安装nginx的设备80端口和443端口上。（下面配置以www.example.com 为例，请替换为自己的域名。）</p>
+<pre tabindex=0><code>$ sudo certbot --nginx -d www.example.com
+</code></pre><p>这一步会输出证书目录</p>
+<pre tabindex=0><code>$ sudo certbot --nginx -d www.example.com
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Requesting a certificate for www.example.com
+
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/www.example.com/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/www.example.com/privkey.pem
+This certificate expires on 2021-11-14.
+These files will be updated when the certificate renews.
+Certbot has set up a scheduled task to automatically renew this certificate in the background.
+</code></pre><h2 id=3-配置nginx>
+3. 配置nginx
+<a class=anchor href=#3-%e9%85%8d%e7%bd%aenginx>#</a>
+</h2>
+<p>sudo创建文件“/etc/nginx/conf.d/lomorage.conf”，并填入如下内容（下面配置以www.example.com 为例，请替换为自己的域名。）:</p>
+<pre tabindex=0><code>server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name jeromyfu.lomorage.com;
+
+    ssl on;
+    ssl_certificate /etc/letsencrypt/live/www.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/www.example.com/privkey.pem;
+
+    location / {
+        client_max_body_size 0;
+        proxy_pass http://localhost:8000;
+        proxy_set_header X-Forwarded-For $remote_addr;
+    }
+}
+</code></pre><p>如果Lomorage和nginx运行在不同的设备上，可以将localhost改成Lomorage服务器的ip地址。</p>
+<p>配置完成后，重新加载配置并启用nginx服务:</p>
+<pre tabindex=0><code>sudo systemctl restart nginx
+sudo systemctl enable nginx
+</code></pre><p>最后可以在电脑或者手机浏览器下访问https://www.example..com/system 验证（请替换为自己的域名）是否能通过https访问lomorage服务。</p>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div class=book-languages tabindex=0 aria-haspopup=true>
+<ul>
+<li class="flex align-center">
+<img src=/svg/translate.svg class=book-icon alt=Languages>
+中文
+</li>
+</ul>
+<ul class=book-languages-list>
+<li>
+<a href=https://docs.lomorage.com/docs/Installation/external-access/ class="flex align-center">
+<img src=/svg/translate.svg class=book-icon alt=Languages>
+English
+</a>
+</li>
+<li class=active>
+<a href=https://docs.lomorage.com/zh/ class="flex align-center">
+<img src=/svg/translate.svg class=book-icon alt=Languages>
+中文
+</a>
+</li>
+</ul>
+</div>
+<div><a class="flex align-center" href=https://github.com/lomodoc/homepage/commit/8256454078836db5836aed221ab658cd2d251064 title="最后修改者 Jiantao Fu | August 17, 2021" target=_blank rel=noopener>
+<img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>August 17, 2021</span>
+</a>
+</div>
+<div>
+<a class="flex align-center" href=https://github.com/lomodoc/homepage/edit/main/content.zh/docs/Installation/external-access/_index.md target=_blank rel=noopener>
+<img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>编辑本页</span>
+</a>
+</div>
+</div>
+</footer>
+<div class=book-comments>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//lomorage.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#外网访问设置>外网访问设置</a>
+<ul>
+<li><a href=#ngrok-方案1>ngrok (方案1)</a>
+<ul>
+<li><a href=#1-注册>1. 注册</a></li>
+<li><a href=#2-下载>2. 下载</a></li>
+<li><a href=#3-安装>3. 安装</a></li>
+<li><a href=#4-连接您的账号>4. 连接您的账号</a></li>
+<li><a href=#5-运行ngrok>5. 运行ngrok</a></li>
+<li><a href=#6-在lomorage手机应用中配置隧道服务>6. 在Lomorage手机应用中配置隧道服务</a></li>
+</ul>
+</li>
+<li><a href=#nginx-https代理-方案2>Nginx https代理 (方案2)</a></li>
+<li><a href=#1-安装certbot和nginx>1. 安装certbot和nginx</a></li>
+<li><a href=#2-生成证书>2. 生成证书</a></li>
+<li><a href=#3-配置nginx>3. 配置nginx</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
