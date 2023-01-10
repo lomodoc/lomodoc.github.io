@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lomorage服务 on Lomorage文档</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/</link><description>Recent content in Lomorage服务 on Lomorage文档</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://docs.lomorage.com/zh/docs/Installation/lomorage-service/index.xml" rel="self" type="application/rss+xml"/><item><title>Raspbian</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-raspbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-raspbian/</guid><description>在树莓派上安装Lomorage服务程序
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lomorage照片助手 on Lomorage文档</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/</link><description>Recent content in Lomorage照片助手 on Lomorage文档</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://docs.lomorage.com/zh/docs/Installation/lomorage-service/index.xml" rel="self" type="application/rss+xml"/><item><title>Raspbian</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-raspbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-raspbian/</guid><description>在树莓派上安装&amp;quot;Lomorage照片助手&amp;quot;程序
 #
 要在树莓派上运行，您需要先购买一个
 树莓派，Lomorage可以运行在以下型号的机器上:
@@ -6,18 +6,18 @@ Raspberry Pi 4 Model B
 Raspberry Pi 3 Model B+
 Raspberry Pi Zero W
 Raspberry Pi 2 Model B 如果您还没有树莓派，我们建议购买新款的树莓派，会有更好的性能。下面是您需要的最小配置:
-树莓派主板 配套电源 16GB MicroSD卡 有3种方式来在Raspberry Pi上安装Lomorage服务程序, 一种是安装预编译好的系统镜像，该镜像已经安装了所有Lomorage服务程序依赖的库和第三方工具，简单快捷，推荐使用；如果您已经有树莓派在运行其他服务，您也可以使用Docker镜像来安装，或者使用从APT源安装。
+树莓派主板 配套电源 16GB MicroSD卡 有3种方式来在Raspberry Pi上安装&amp;quot;Lomorage照片助手&amp;quot;程序, 一种是安装预编译好的系统镜像，该镜像已经安装了所有&amp;quot;Lomorage照片助手&amp;quot;程序依赖的库和第三方工具，简单快捷，推荐使用；如果您已经有树莓派在运行其他服务，您也可以使用Docker镜像来安装，或者使用从APT源安装。
 安装系统镜像
 #
 预装的系统镜像包括所有的包:
-lomo-backend: Lomorage服务程序
-lomo-web: Lomorage网页程序
+lomo-backend: &amp;ldquo;Lomorage照片助手&amp;quot;程序
 lomo-base: 系统工具，包括网络配置，开关控制, 磁盘加载, 蓝牙控制台
 lomo-frame: 数码相框程序
 点击下面的链接下载系统镜像。
 Raspberry Pi
 下载了系统镜像后, 你可以使用
-balenaEtcher将其安装到MicroSD卡, balenaEtcher提供Windows和macOS版本。</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
+balenaEtcher将其安装到MicroSD卡, balenaEtcher提供Windows和macOS版本。
+将MicroSD卡插入到台式电脑或笔记本的读卡器后，选择下载的系统镜像，选择MicroSD卡，点击“Flash“按钮，几分钟后工具就会提示您的MicroSD卡已经就绪, 之后将MicroSD卡插入到树莓派，接上USB移动硬盘，插入网线，接通电源，等待几分钟系统启动完毕，您就可以用Lomorage 手机App开始备份照片了。</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
 #
 可以有两种安装方式:
 Docker安装
@@ -49,44 +49,146 @@ APT安装
 当前我们只支持x86/AMD64 Ubuntu 18.04.5 LTS (Bionic Beaver)和Ubuntu 20.04.1 LTS (Focal Fossa)。
 1. 安装lomoware源
 #
-sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh wget -qO - https://lomoware.lomorage.com/debian/gpg.key | sudo apt-key add - 如果您使用Bionic:
+sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh curl -fsSL https://lomoware.lomorage.com/debian/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/lomorage-apt-key.gpg &amp;gt; /dev/null 如果您使用Bionic:
 echo &amp;#34;deb [arch=amd64] https://lomoware.lomorage.com/debian/bionic bionic main&amp;#34; | sudo tee /etc/apt/sources.list.d/lomoware.list 如果您使用focal:
 echo &amp;#34;deb [arch=amd64] https://lomoware.lomorage.com/debian/focal focal main&amp;#34; | sudo tee /etc/apt/sources.list.d/lomoware.list 然后运行:
-sudo apt update 2. 安装Lomorage
+sudo apt update 2.</description></item><item><title>Windows</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</guid><description>在Windows上安装&amp;quot;Lomorage照片助手&amp;quot;
 #
-您至少需要安装lomo-vips,lomo-base-lite和lomo-backend。</description></item><item><title>Windows</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/</guid><description>在Windows上安装Lomorage服务程序
+如何升级？
 #
-（最近更新：2021/09/15）
-升级了 lomo-web 服务程序 如何升级？（以后会改为自动升级，请稍后）
+下载新的MSI 安装包, 然后直接安装： 安装程序会自动删除老的版本 千万不要用 360 等工具来删除，那样可能会把数据文件删掉！！！
+1. 点击下面的链接安装&amp;quot;Lomorage照片助手&amp;quot;程序。
 #
-请在控制面板里删除lomorage server。 千万不要用 360 等工具来删除，那样可能会把数据文件删掉！！！
-然后下载新的MSI 安装包 1. 点击下面的链接安装Lomorage服务程序。
-#
-点击下载 == Windows 如果上面链接无法访问，也可以点击
-这里下载
-2. 双击&amp;quot;lomoagent.msi&amp;quot;开始安装。如果有Windows Defender提示未知应用，请参考如下步骤允许安装程序运行。
+点击下载 == Windows 2. 双击&amp;quot;lomoagent.msi&amp;quot;, 点击【下一步】开始安装
 #
 3. 勾选&amp;quot;最终用户许可协议&amp;quot;后，一路完成安装步骤。
 #
-4. 双击桌面的LomoAgent图标，启动应用程序，如果有防火墙提示，请允许LomoAgent访问私有网络。
+4. 双击桌面的“Lomorage照片助手”图标，启动应用程序，如果有防火墙提示，请允许“Lomorage照片助手”访问私有网络。
 #
 5. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。
 #
-6. 可以点击托盘图标右键菜单，选择“导入” 可以打开网页客户端进行导入和浏览您已经备份的照片！
+6. 可以点击托盘图标右键菜单，选择“打开网页客户端程序” 启动网页客户端进行导入和浏览您已经备份的照片！
 #
 7. 重置用户密码
 #
 托盘右键菜单，选择 “重置用户密码”，按照界面提示操作。
 8. 高级设置：
 #
-托盘右键菜单 “advances”，打开配置文件，可以配置 网页客户端 端口号。</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装Lomorage服务程序
+托盘右键菜单 “advances”，打开配置文件，可以配置 网页客户端 端口号。
+{ &amp;#34;autoHideWindow&amp;#34;: false, &amp;#34;autoStartRedundancyBackup&amp;#34;: false, &amp;#34;autoStarted&amp;#34;: false, &amp;#34;enableBackupDir&amp;#34;: true, &amp;#34;isDebug&amp;#34;: false, &amp;#34;mountDir&amp;#34;: &amp;#34;C:\\Users\\Administrator\\Documents\\lomodata&amp;#34;, &amp;#34;mountDirBk&amp;#34;: &amp;#34;H:\\test-bk&amp;#34;, &amp;#34;port&amp;#34;: 8000, &amp;#34;runAsService&amp;#34;: false, &amp;#34;webport&amp;#34;: 8003 // 网页客户端端口号 } 您可以在另一台同网络内的机器（比如A机器）上访问该服务器B（安装了&amp;quot;Lomorage照片助手&amp;quot;的电脑为B），可以在A机器上的浏览器输入： http://B机器的ip:端口号。 比如： B 服务器的IP地址是 192.</description></item><item><title>OSX</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/</guid><description>在MacOS上安装&amp;quot;Lomorage照片助手&amp;quot;程序
 #
-1. 点击下面的链接安装Lomorage服务程序。
+1. 点击下面的链接安装&amp;quot;Lomorage照片助手&amp;quot;程序。
 macOS
-如果上面链接无法访问，也可以从百度网盘下载: 链接: https://pan.baidu.com/s/1MVIfj65_ftvAHrIlz7qedQ 提取码: ji2d
+macOS M1
 2. 双击&amp;quot;LomoAgent.dmg&amp;quot;开始安装，参考下面步骤完成安装。
-3. 运行应用程序LomoAgent，如果有防火墙提示，请允许LomoAgent访问网络。
+3. 运行应用程序“Lomorage照片助手”，如果有防火墙提示，请允许“Lomorage照片助手”访问网络。
 4. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。除此之前您也可以再多选择一个冗余备份目录，系统会每天定时进行冗余备份。</description></item><item><title>Docker</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/</guid><description>Docker安装
 #
 请参考
-lomo-docker安装Docker镜像。您可以根据你的CPU架构选择使用arm的镜像&amp;quot;lomorage/raspberrypi-lomorage:latest&amp;quot;，或者amd64的镜像&amp;quot;lomorage/amd64-lomorage:latest&amp;quot;</description></item></channel></rss>
+lomo-docker安装Docker镜像。您可以根据你的CPU架构选择使用arm的镜像&amp;quot;lomorage/raspberrypi-lomorage:latest&amp;quot;，或者amd64的镜像&amp;quot;lomorage/amd64-lomorage:latest&amp;quot;
+下面是在Raspberry Pi OS (64-bit)桌面版上安装的例子.
+docker-compose.yml:
+version: &amp;quot;3.9&amp;quot;
+services:
+lomo:
+image: ${IMG}
+container_name: lomorage
+privileged: true
+environment:
+- LOMOD_DISABLE_MOUNT_MONITOR=1
+cap_add:
+- ALL
+volumes:
+- ${HOME_MEDIA_DIR}:/media/WD_36AA8D42AA8D001B
+- ${HOME_MEDIA_BAKUP_DIR}:/media/WD_90C27F73C27F5C82
+- ${HOME_LOMO_DIR}:/lomo
+- /dev:/dev
+ports:
+- ${LOMOD_PORT}:${LOMOD_PORT}
+- 8004:8004
+command: $LOMOD_PORT
+watchtower:
+image: ${AUTO_UPDATE_IMG}
+container_name: watchtower
+restart: always
+volumes:
+- /var/run/docker.sock:/var/run/docker.sock
+command: lomorage --cleanup
+.env文件:
+IMG=lomorage/arm64-lomorage:latest
+AUTO_UPDATE_IMG=containrrr/watchtower:arm64v8-latest
+# IMG=lomorage/amd64-lomorage:latest
+# AUTO_UPDATE_IMG=containrrr/watchtower:amd64-latest
+LOMOD_PORT=8000
+# change the directories in your env
+HOME_MEDIA_DIR=&amp;quot;/media/jeromy/My Passport1&amp;quot;
+HOME_MEDIA_BAKUP_DIR=&amp;quot;/media/jeromy/My Passport&amp;quot;
+HOME_LOMO_DIR=&amp;quot;/home/jeromy/lomo&amp;quot;
+# mdns works in vlan, change vlan settings in your env
+NETWORK_TYPE=ipvlan # macvlan
+NETWORK_INF=eth0
+SUBNET=192.</description></item><item><title>Openwrt</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-openwrt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-openwrt/</guid><description>Openwrt安装
+#
+Lomorage的opkg包安装依赖Entware软件仓库中的其他包(比如ffmpeg exif-tools)。
+当前在Beta测试中，如果您碰到什么问题请联系我们。
+快速开始
+#
+1. 安装Entware
+#
+请参考
+这里的步骤来安装Entware到目标机上。
+您可以使用cat /proc/cpuinfo命令来检查系统架构:
+root@OpenWrt:/mnt/sda1# cat /proc/cpuinfo system type : Atheros AR9344 rev 2
+machine : Western Digital My Net N750
+processor : 0
+cpu model : MIPS 74Kc V4.12
+BogoMIPS : 278.93
+wait instruction : yes
+microsecond timers : yes
+tlb_entries : 32
+extra interrupt vector : yes
+hardware watchpoint : yes, count: 4, address/irw mask: [0x0ffc, 0x0ffc, 0x0ffb, 0x0ffb]
+isa : mips1 mips2 mips32r1 mips32r2
+ASEs implemented : mips16 dsp dsp2
+Options implemented : tlb 4kex 4k_cache prefetch mcheck ejtag llsc dc_aliases perf_cntr_intr_bit nan_legacy nan_2008 perf
+shadow register sets : 1
+kscratch registers : 0
+package : 0
+core : 0
+VCED exceptions : not available
+VCEI exceptions : not available
+如果是MIPS，可以使用 lscpu来查看字节序，mips是big-endian架构,.</description></item><item><title>Unraid</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-unraid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-unraid/</guid><description>在Unraid App Store里面选择并安装Lomorage
+#
+输入关键字lomorage，点击搜索 当您发现lomorage应用以后，您可以点击info图标，从而了解更多有关lomorage在unraid论坛里面的支持
+点击安装，当下图出现的时候，说明安装已经成功 Unraid 模版修改
+#
+如果您对缺省的模版需要修改，请参考以下说明：
+Network: 缺省值是host模式，这主要是因为手机客户端需要试用MDNS来自动发现&amp;quot;Lomorage照片助手&amp;quot;，如果您愿意手动配置手机客户端，可以将此处设置为bridge模式 ExtraParams: 缺省值是99:100. 这个参数需要和下面的User 配置一起使用。这个值主要是为了保证上传的图片和视频可以有正确的Linux用户名和组名，这样的话用户就可以利用unraid的共享服务，从电脑端远程访问图片和视频.其中，99 是nobody用户在linux下面的ID, 100 是nobody组在linux下面的ID. 用户可以根据自己需要定制这些值. PostArgs: 缺省值是8000, 是 lomorage 后端的监听端口. Config MediaDir: 这个目录是上传的媒体存储目录，缺省值是/mnt/user/ AppDir: 这个目录是lomorage后端配置文件，数据库文件和日志文件的存储目录，缺省值是/mnt/user/appdata User: 这个文件是将实际的用户id信息传入到后端，从而保证后台可以生成正确的用户名. Nginx Proxy Manager 集成
+#
+Nginx Proxy Manager 是一个流行的免费反向代理服务器，可以用来把内网的服务映射到公网internet上面。unraid社区已经有了官方支持的app，用户可以自行安装.
+登陆之后，点击 Add Proxy Host, 然后设置自己的域名和转发ip，转发端口是上面设置的监听端口 点击 SSL，配置证书域名 点击Save, 新添加的proxy host会显示在列表中</description></item><item><title>群晖</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-synology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-synology/</guid><description>群晖
+#
+1. 从docker镜像仓库里面搜索lomorage
+#
+找到lomorage镜像文件后，单击Download图标，下载docker文件。注意lomorage有arm和amd64的不同版本，请根据您的实际情况，下载对应的docker文件
+2. 启动lomorage镜像
+#
+在Image页面，选择已经下载的lomorage container，点击Launch图标
+3. 高级设置
+#
+设置container名字，然后点击Advanced Setting图标
+3.1. 勾选自动重启
+#
+3.2. 设置Volume
+#
+在volume页面，点击Add Folder，添加lomorage文件夹和两个子文件夹:
+data: 这个文件夹主要用来存储图片和视频文件, 需要mount到container内部/media目录 app: 这个文件夹主要用来存储应用相关的log，配置文件等等，需要mount到container内部/lomo 3.3. 设置端口
+#
+在端口设置页面，添加tcp端口映射8000 -&amp;gt; 8000
+4. Done
+#
+点击 Apply 按钮，lomorage container应当开始运行，你可以从手机端访问&amp;quot;Lomorage照片助手&amp;quot;
+5. 高级MAC vlan docker 网络
+#
+上述步骤使用缺省的docker bridge网络，用户需要在手机端手动输入ip和端口。如果用户对ssh和docker命令有些了解，可以通过添加docker mac vlan网络的方式来启用MDNS功能，这样手机端就可以自动发现&amp;quot;Lomorage照片助手&amp;quot;。首先需要确认你知道自己的子网，网关ip，网络接口名字，lomorage container分配的新的静态ip，以下截图假设
+subnet: 192.168.1.0/24 gateway: 192.168.1.1 interface name: eth0 new static ip: 192.</description></item></channel></rss>

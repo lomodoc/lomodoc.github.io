@@ -1,0 +1,36 @@
+---
+title: OSX
+weight: 5
+---
+
+# Install "Lomorage Photo Assistant" on MacOS
+
+<span>1.</span> Click the link below to download "Lomorage Photo Assistant" Application.
+
+<p align="center">
+<<<<<<< HEAD
+<a href="https://github.com/lomorage/LomoAgentOSX/releases/download/2022_04_19.09_44_42.0.d3499e8/LomoAgent.dmg" title="Install Lomorage for macOS" class="badge osx">macOS</a>
+=======
+<a href="https://github.com/lomorage/LomoAgentOSX/releases/download/2022_04_19.22_56_08.0.a033d26/LomoAgent.dmg" title="Install Lomorage for macOS" class="badge osx">macOS</a>
+>>>>>>> 6a06700f304cb876649b6b1b4cebfca292d41fe3
+</p>
+
+<span>2.</span> Double click "LomoAgent.dmg" to start installation, and follow the steps below to finish the installation.
+
+<div align="center">
+<p class="screenshoot">
+  <img width="50%" src="/img/installation/osx-install-1.png">
+  <img width="50%" src="/img/installation/osx-install-2.png">
+  <img width="50%" src="/img/installation/osx-install-3.png">
+</p>
+</div>
+
+<span>3.</span> Run "Lomorage Photo Assistant" Application，please allow network access for "Lomorage Photo Assistant" if firewall is triggered.
+
+<span>4.</span> After launching the "Lomorage Photo Assistant" application，**You need to set the "Home directory" before using Lomorage**，"Home directory" is used to save the photos and videos uploading from your phone。You can also set up a backup directory which served as redundancy backup.
+
+<div align="center">
+<p class="screenshoot">
+  <img width="50%" src="/img/installation/osx-lomo-agent.png">
+</p>
+</div>

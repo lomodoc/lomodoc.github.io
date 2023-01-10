@@ -2,16 +2,18 @@
 #
 You can install the application on either iPad or iPhone, the minimum iOS version required in 10.3.
 --
-After launching Lomorage, it should be able to discover the Lomorage service running in the same network. If you have multiple Lomorage service instances running, those will be listed and you can choose one to use. If Lomorage service can&amp;rsquo;t be discovered automatically, you can discover the service via QRCode Scanning when using Windows or MacOS LomoAgent (open settings in LomoAgent to show the QRCode), or you can input the IP address and port manually.</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-andriod/</guid><description>Install Lomorage App in Android phone
+After launching Lomorage, it should be able to discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; running in the same network. If you have multiple &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; instances running, those will be listed and you can choose one to use. If &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; can&amp;rsquo;t be discovered automatically, you can discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; via QRCode Scanning when using Windows or MacOS Lomorage Photo Assistant (open settings in Lomorage Photo Assistant to show the QRCode), or you can input the IP address and port manually.</description></item><item><title>Android</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-android/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-android/</guid><description>Install Lomorage App in Android phone
 #
 Currently you can install the app on Android phone, the minimal version is 7.1.
-Latest Update：2021-09-12
-#
-add more meaningful msg while create user fail Click below icon to go to Goole Play Store to download.
+Click below icon to go to Goole Play Store to download.
+Update：01/08/2023
 Directly download APK
+Download from github release page
 --
-After launching Lomorage, it will take a few minutes to import all your photos and videos on phone in the first time.</description></item><item><title>Web</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</guid><description>Install Lomorage Web client
+After launching Lomorage, it will take a few minutes to import all your photos and videos on phone in the first time.
+Then you can click the right up more menu to Manage account.</description></item><item><title>Web</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</guid><description>Install Lomorage Web client
 #
 You can use Lomorage Web client to upload photos/videos from desktop/laptop using browser, and you can use the gallery to view the photos/videos stored in Lomorage.
-If you are using Lomorage Service in MacOS, then you can just click &amp;ldquo;import&amp;rdquo; menu item in LomoAgent Application, and it will open the web application.
-If you are using Lomorage Service in Raspberry Pi, then you can use the following command to install Lomorage Web client on your raspberry Pi:</description></item></channel></rss>
+If you are using &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; in MacOS, then you can just click &amp;ldquo;Web Access&amp;rdquo; menu item in Lomorage Photo Assistant Application, and it will open the web application.
+If you are using &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; in Raspberry Pi, you can open &amp;ldquo;
+http://raspberrypi-lomorage.</description></item></channel></rss>

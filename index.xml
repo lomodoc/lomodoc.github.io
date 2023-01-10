@@ -2,21 +2,22 @@
 #
 You can install the application on either iPad or iPhone, the minimum iOS version required in 10.3.
 --
-After launching Lomorage, it should be able to discover the Lomorage service running in the same network. If you have multiple Lomorage service instances running, those will be listed and you can choose one to use. If Lomorage service can&amp;rsquo;t be discovered automatically, you can discover the service via QRCode Scanning when using Windows or MacOS LomoAgent (open settings in LomoAgent to show the QRCode), or you can input the IP address and port manually.</description></item><item><title>Raspbian</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-raspbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-raspbian/</guid><description>Install Lomorage Service on Raspberry Pi
+After launching Lomorage, it should be able to discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; running in the same network. If you have multiple &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; instances running, those will be listed and you can choose one to use. If &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; can&amp;rsquo;t be discovered automatically, you can discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; via QRCode Scanning when using Windows or MacOS Lomorage Photo Assistant (open settings in Lomorage Photo Assistant to show the QRCode), or you can input the IP address and port manually.</description></item><item><title>Raspbian</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-raspbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-raspbian/</guid><description>Install &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; on Raspberry Pi
 #
 To run on Raspberry Pi, you need to order a Raspberry Pi, we have tested the image the following models:
 Raspberry Pi 4 Model B
 Raspberry Pi 3 Model B+
 Raspberry Pi Zero W
-Raspberry Pi 2 Model B If you don&amp;rsquo;t have one yet, we would recommend the newer version, which gives better performance. The minimum set you need includes:</description></item><item><title>Andriod</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-andriod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-andriod/</guid><description>Install Lomorage App in Android phone
+Raspberry Pi 2 Model B If you don&amp;rsquo;t have one yet, we would recommend the newer version, which gives better performance. The minimum set you need includes:</description></item><item><title>Android</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-android/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-android/</guid><description>Install Lomorage App in Android phone
 #
 Currently you can install the app on Android phone, the minimal version is 7.1.
-Latest Update：2021-09-12
-#
-add more meaningful msg while create user fail Click below icon to go to Goole Play Store to download.
+Click below icon to go to Goole Play Store to download.
+Update：01/08/2023
 Directly download APK
+Download from github release page
 --
-After launching Lomorage, it will take a few minutes to import all your photos and videos on phone in the first time.</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
+After launching Lomorage, it will take a few minutes to import all your photos and videos on phone in the first time.
+Then you can click the right up more menu to Manage account.</description></item><item><title>Armbian</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-armbian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-armbian/</guid><description>Armbian
 #
 You have two options to install:
 Docker installation
@@ -36,27 +37,85 @@ APT installation
 Currently we only support x86/AMD64 Ubuntu 18.04.5 LTS (Bionic Beaver) and Ubuntu 20.04.1 LTS (Focal Fossa).
 1. Add lomoware source
 #
-sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh wget -qO - https://lomoware.</description></item><item><title>Web</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</guid><description>Install Lomorage Web client
+sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-ca-certificates --fresh curl -fsSL https://lomoware.</description></item><item><title>Web</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</guid><description>Install Lomorage Web client
 #
 You can use Lomorage Web client to upload photos/videos from desktop/laptop using browser, and you can use the gallery to view the photos/videos stored in Lomorage.
-If you are using Lomorage Service in MacOS, then you can just click &amp;ldquo;import&amp;rdquo; menu item in LomoAgent Application, and it will open the web application.
-If you are using Lomorage Service in Raspberry Pi, then you can use the following command to install Lomorage Web client on your raspberry Pi:</description></item><item><title>Windows</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-win/</guid><description>Install Lomorage Service on Windows
+If you are using &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; in MacOS, then you can just click &amp;ldquo;Web Access&amp;rdquo; menu item in Lomorage Photo Assistant Application, and it will open the web application.
+If you are using &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; in Raspberry Pi, you can open &amp;ldquo;
+http://raspberrypi-lomorage.</description></item><item><title>Windows</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-win/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-win/</guid><description>Install &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; on Windows
 #
-（Update：09/15/2021）
-update lomoweb update to 64bit Fix set dir regression issue. 1. Download
+1. Download
 #
-Click the Windows icon link below to download Lomorage Server For Windows.
+Click the Windows icon link below to download &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; For Windows.
 Click to download == Windows 2. Double click &amp;ldquo;lomoagent.msi&amp;rdquo; to start installation.
 #
 If Windows Defender shows &amp;ldquo;lomoagent.msi&amp;rdquo; as unknown application, please follow the steps below to allow it to run.
 3. Follow the wizard
 #
-to finish the installation, in the End-User License Agreement, please checked the box as below.</description></item><item><title>OSX</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-osx/</guid><description>Install Lomorage Service on MacOS
+to finish the installation, in the End-User License Agreement, please checked the box as below.</description></item><item><title>OSX</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-osx/</guid><description>Install &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; on MacOS
 #
-1. Click the link below to download Lomorage Service Application.
+1. Click the link below to download &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; Application.
 macOS
+macOS M1
 2. Double click &amp;ldquo;LomoAgent.dmg&amp;rdquo; to start installation, and follow the steps below to finish the installation.
-3. Run LomoAgent Application，please allow network access for LomoAgent if firewall is triggered.
-4. After launch the Lomorage application，You need to set the &amp;ldquo;Home directory&amp;rdquo; before using Lomorage，&amp;ldquo;Home directory&amp;rdquo; is used to save the photos and videos uploading from your phone。You can also set up a backup directory which served as redundancy backup.</description></item><item><title>Docker</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-docker/</guid><description>Docker installation
+3. Run &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; Application，please allow network access for &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; if firewall is triggered.
+4. After launching the &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; application，You need to set the &amp;ldquo;Home directory&amp;rdquo; before using Lomorage，&amp;ldquo;Home directory&amp;rdquo; is used to save the photos and videos uploading from your phone。You can also set up a backup directory which served as redundancy backup.</description></item><item><title>Docker</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-docker/</guid><description>Docker installation
 #
-Please refer to lomo-docker for installation with docker image. You can either use the arm image &amp;ldquo;lomorage/raspberrypi-lomorage:latest&amp;rdquo; or amd64 image &amp;ldquo;lomorage/amd64-lomorage:latest&amp;rdquo; based on the host architecture.</description></item></channel></rss>
+Please refer to lomo-docker for installation with docker image. You can either use the arm image &amp;ldquo;lomorage/raspberrypi-lomorage:latest&amp;rdquo; or amd64 image &amp;ldquo;lomorage/amd64-lomorage:latest&amp;rdquo; based on the host architecture.
+Below is an example to run lomo-docker on Raspberry Pi OS (64-bit) with desktop.
+docker-compose.yml:
+version: &amp;quot;3.9&amp;quot;
+services:
+lomo:
+image: ${IMG}
+container_name: lomorage
+privileged: true
+environment:
+- LOMOD_DISABLE_MOUNT_MONITOR=1
+cap_add:
+- ALL
+volumes:
+- ${HOME_MEDIA_DIR}:/media/WD_36AA8D42AA8D001B
+- ${HOME_MEDIA_BAKUP_DIR}:/media/WD_90C27F73C27F5C82
+- ${HOME_LOMO_DIR}:/lomo
+- /dev:/dev
+ports:
+- ${LOMOD_PORT}:${LOMOD_PORT}
+- 8004:8004
+command: $LOMOD_PORT
+watchtower:
+image: ${AUTO_UPDATE_IMG}
+container_name: watchtower
+restart: always
+volumes:
+- /var/run/docker.</description></item><item><title>Openwrt</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-openwrt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-openwrt/</guid><description>Openwrt installation
+#
+Lomorage setup using opkg packages with Entware repository (need dependencies in Entware, like ffmpeg exif-tools).
+This is currently in Beta, please reach us if you have any problem.
+Quick Start
+#
+This is for users who want to setup Lomorage using opkg packets.
+1. Install Entware
+#
+Follow the instruction to install Entware on target machine.
+You can use cat /proc/cpuinfo to check the architecture:</description></item><item><title>Synology</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-synology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-synology/</guid><description>Synology
+#
+1. Search lomorage from docker registry
+#
+Once lomorage image is found, you can also click Download icon to download the docker image. There are arm and amd64 version, please download correct one based on your host arch.
+2. Launch lomorage container
+#
+Go to Image tab, select downloaded lomorage container, click Launch icon
+3. Advanced settings
+#
+Set name for new container, and click Advanced Setting button</description></item><item><title>Unraid</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-unraid/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-unraid/</guid><description>Unraid
+#
+1. Search lomorage from app store
+#
+Once lomorage is found, you can also click info icon to learn more about lomorage support at unraid forum
+2. Click install. You are done!
+#
+Unraid template customization
+#
+Below is the explanation on template configuration.
+Network: Default value is host mode because mobile client uses MDNS to auto-discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; listen address and port.</description></item></channel></rss>
