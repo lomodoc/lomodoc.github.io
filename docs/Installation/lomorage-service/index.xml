@@ -31,10 +31,12 @@ sudo apt install -y ca-certificates python-certifi python3-certifi sudo update-c
 Click the Windows icon link below to download &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; For Windows.
 Click to download == Windows 2. Double click &amp;ldquo;lomoagent.msi&amp;rdquo; to start installation.
 #
-If Windows Defender shows &amp;ldquo;lomoagent.msi&amp;rdquo; as unknown application, please follow the steps below to allow it to run.
 3. Follow the wizard
 #
-to finish the installation, in the End-User License Agreement, please checked the box as below.</description></item><item><title>OSX</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-osx/</guid><description>Install &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; on MacOS
+to finish the installation, in the End-User License Agreement, please checked the box as below.
+4. Allow network access
+#
+Now you should see the lomoagent icon on your desktop, you can double click to start &amp;ldquo;Lomorage Photo Assistant&amp;rdquo;.</description></item><item><title>OSX</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-osx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-osx/</guid><description>Install &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; on MacOS
 #
 1. Click the link below to download &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; Application.
 macOS
