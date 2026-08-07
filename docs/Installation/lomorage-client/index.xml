@@ -1,18 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lomorage Client on Lomorage Documentation</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/</link><description>Recent content in Lomorage Client on Lomorage Documentation</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://docs.lomorage.com/docs/Installation/lomorage-client/index.xml" rel="self" type="application/rss+xml"/><item><title>iOS</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-ios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-ios/</guid><description>Install Lomorage iOS client
-#
-You can install the application on either iPad or iPhone, the minimum iOS version required in 10.3.
---
-After launching Lomorage, it should be able to discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; running in the same network. If you have multiple &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; instances running, those will be listed and you can choose one to use. If &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; can&amp;rsquo;t be discovered automatically, you can discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; via QRCode Scanning when using Windows or MacOS Lomorage Photo Assistant (open settings in Lomorage Photo Assistant to show the QRCode), or you can input the IP address and port manually.</description></item><item><title>Android</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-android/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-android/</guid><description>Install Lomorage App in Android phone
-#
-Currently you can install the app on Android phone, the minimal version is 7.1.
-Click below icon to go to Goole Play Store to download.
-Update：09/04/2023
-Download from github release page
---
-After launching Lomorage, it will take a few minutes to import all your photos and videos on phone in the first time.
-Then you can click the right up more menu to Manage account.</description></item><item><title>Web</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</guid><description>Install Lomorage Web client
-#
-You can use Lomorage Web client to upload photos/videos from desktop/laptop using browser, and you can use the gallery to view the photos/videos stored in Lomorage.
-If you are using &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; in MacOS, then you can just click &amp;ldquo;Web Access&amp;rdquo; menu item in Lomorage Photo Assistant Application, and it will open the web application.
-If you are using &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; in Raspberry Pi, you can open &amp;ldquo;
-http://raspberrypi-lomorage.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lomorage Client on Lomorage Documentation</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/</link><description>Recent content in Lomorage Client on Lomorage Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="https://docs.lomorage.com/docs/Installation/lomorage-client/index.xml" rel="self" type="application/rss+xml"/><item><title>iOS</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-ios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-ios/</guid><description>&lt;h1 id="install-lomorage-ios-client"&gt;
+ Install Lomorage iOS client
+ &lt;a class="anchor" href="#install-lomorage-ios-client"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;You can install the application on either iPad or iPhone, the minimum iOS version required in 10.3.&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://apps.apple.com/us/app/lomorage/id1451516091"&gt;&lt;img alt="Download on the App Store" src="https://docs.lomorage.com/img/installation/app-store-ios.svg" width="220"&gt;&lt;/a&gt;
+&lt;!--
+ &amp;nbsp;
+&lt;a href=""&gt;&lt;img alt="Get it on Google Play" src="https://docs.lomorage.com/img/installation/app-store-google.svg" width="220"&gt;&lt;/a&gt;
+--&gt;
+&lt;/p&gt;
+&lt;p&gt;After launching Lomorage, it should be able to discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; running in the same network. If you have multiple &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; instances running, those will be listed and you can choose one to use. If &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; can&amp;rsquo;t be discovered automatically, you can discover &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; via QRCode Scanning when using Windows or MacOS Lomorage Photo Assistant (open settings in Lomorage Photo Assistant to show the QRCode), or you can input the IP address and port manually.&lt;/p&gt;</description></item><item><title>Android</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-android/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-android/</guid><description>&lt;h1 id="install-lomorage-app-in-android-phone"&gt;
+ Install Lomorage App in Android phone
+ &lt;a class="anchor" href="#install-lomorage-app-in-android-phone"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Currently you can install the app on &lt;strong&gt;Android&lt;/strong&gt; phone, the minimal version is &lt;strong&gt;7.1&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Click below icon to go to Goole Play Store to download.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update：09/04/2023&lt;/strong&gt;&lt;/p&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://play.google.com/store/apps/details?id=com.lomoware.lomorage"&gt;&lt;img alt="Download" src="https://docs.lomorage.com/img/installation/app-store-google.svg" width="220"&gt;&lt;/a&gt;
+&lt;p align="center"&gt;
+&lt;a href="https://github.com/lomorage/lomo-android-apk-release/releases"&gt;Download from github release page&lt;/a&gt;
+&lt;!--
+ &amp;nbsp;
+&lt;a href=""&gt;&lt;img alt="Get it on Google Play" src="https://docs.lomorage.com/img/installation/app-store-google.svg" width="220"&gt;&lt;/a&gt;
+--&gt;
+&lt;/p&gt;
+&lt;p&gt;After launching Lomorage, it will take a few minutes to import all your photos and videos on phone in the first time.&lt;/p&gt;
+&lt;p&gt;Then you can click the right up more menu to &lt;strong&gt;Manage account&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Web</title><link>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-client/installation-web/</guid><description>&lt;h1 id="install-lomorage-web-client"&gt;
+ Install Lomorage Web client
+ &lt;a class="anchor" href="#install-lomorage-web-client"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;You can use Lomorage Web client to upload photos/videos from desktop/laptop using browser, and you can use the gallery to view the photos/videos stored in Lomorage. You can also open the Inbox to view photos/videos shared with you by other family members.&lt;/p&gt;
+&lt;p&gt;If you are using &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; in MacOS, then you can just click &amp;ldquo;Web Access&amp;rdquo; menu item in Lomorage Photo Assistant Application, and it will open the web application.&lt;/p&gt;</description></item></channel></rss>

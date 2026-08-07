@@ -1,17 +1,12 @@
-<!doctype html><html lang=zh dir=ltr><head><meta name=generator content="Hugo 0.78.1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Docker安装#请参考lomo-docker安装Docker镜像。您可以根据你的CPU架构选择使用arm的镜像&#34;lomorage/raspberrypi-lomorage:latest&#34;，或者amd64的镜像&#34;lomorage/amd64-lomorage:latest&#34;
+<!doctype html><html lang=zh dir=ltr><head><meta name=generator content="Hugo 0.164.0"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+  Docker安装
+  #
+
+请参考
+  lomo-docker安装Docker镜像。您可以根据你的CPU架构选择使用arm的镜像"lomorage/raspberrypi-lomorage:latest"，或者amd64的镜像"lomorage/amd64-lomorage:latest"
 下面是在Raspberry Pi OS (64-bit)桌面版上安装的例子.
 docker-compose.yml:
-version: &#34;3.9&#34;services:lomo:image: ${IMG}container_name: lomorageprivileged: trueenvironment:- LOMOD_DISABLE_MOUNT_MONITOR=1cap_add:- ALLvolumes:- ${HOME_MEDIA_DIR}:/media/WD_36AA8D42AA8D001B- ${HOME_MEDIA_BAKUP_DIR}:/media/WD_90C27F73C27F5C82- ${HOME_LOMO_DIR}:/lomo- /dev:/devports:- ${LOMOD_PORT}:${LOMOD_PORT}- 8004:8004command: $LOMOD_PORTwatchtower:image: ${AUTO_UPDATE_IMG}container_name: watchtowerrestart: alwaysvolumes:- /var/run/docker.sock:/var/run/docker.sockcommand: lomorage --cleanup.env文件:
-IMG=lomorage/arm64-lomorage:latestAUTO_UPDATE_IMG=containrrr/watchtower:arm64v8-latest# IMG=lomorage/amd64-lomorage:latest# AUTO_UPDATE_IMG=containrrr/watchtower:amd64-latestLOMOD_PORT=8000# change the directories in your envHOME_MEDIA_DIR=&#34;/media/jeromy/My Passport1&#34;HOME_MEDIA_BAKUP_DIR=&#34;/media/jeromy/My Passport&#34;HOME_LOMO_DIR=&#34;/home/jeromy/lomo&#34;# mdns works in vlan, change vlan settings in your envNETWORK_TYPE=ipvlan # macvlanNETWORK_INF=eth0SUBNET=192."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Docker"><meta property="og:description" content="Docker安装#请参考lomo-docker安装Docker镜像。您可以根据你的CPU架构选择使用arm的镜像&#34;lomorage/raspberrypi-lomorage:latest&#34;，或者amd64的镜像&#34;lomorage/amd64-lomorage:latest&#34;
-下面是在Raspberry Pi OS (64-bit)桌面版上安装的例子.
-docker-compose.yml:
-version: &#34;3.9&#34;services:lomo:image: ${IMG}container_name: lomorageprivileged: trueenvironment:- LOMOD_DISABLE_MOUNT_MONITOR=1cap_add:- ALLvolumes:- ${HOME_MEDIA_DIR}:/media/WD_36AA8D42AA8D001B- ${HOME_MEDIA_BAKUP_DIR}:/media/WD_90C27F73C27F5C82- ${HOME_LOMO_DIR}:/lomo- /dev:/devports:- ${LOMOD_PORT}:${LOMOD_PORT}- 8004:8004command: $LOMOD_PORTwatchtower:image: ${AUTO_UPDATE_IMG}container_name: watchtowerrestart: alwaysvolumes:- /var/run/docker.sock:/var/run/docker.sockcommand: lomorage --cleanup.env文件:
-IMG=lomorage/arm64-lomorage:latestAUTO_UPDATE_IMG=containrrr/watchtower:arm64v8-latest# IMG=lomorage/amd64-lomorage:latest# AUTO_UPDATE_IMG=containrrr/watchtower:amd64-latestLOMOD_PORT=8000# change the directories in your envHOME_MEDIA_DIR=&#34;/media/jeromy/My Passport1&#34;HOME_MEDIA_BAKUP_DIR=&#34;/media/jeromy/My Passport&#34;HOME_LOMO_DIR=&#34;/home/jeromy/lomo&#34;# mdns works in vlan, change vlan settings in your envNETWORK_TYPE=ipvlan # macvlanNETWORK_INF=eth0SUBNET=192."><meta property="og:type" content="article"><meta property="og:url" content="https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/"><meta property="article:modified_time" content="2022-10-16T11:12:43-07:00"><meta property="og:site_name" content="Lomorage文档"><title>Docker | Lomorage文档</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=alternate hreflang=en href=https://docs.lomorage.com/docs/Installation/lomorage-service/installation-docker/ title=Docker><link rel=stylesheet href=/book.min.d805fe2ebdefe4129affdf99919216bbf7f9e3d6ed05e1b743c4e4266ceb6543.css integrity="sha256-2AX+Lr3v5BKa/9+ZkZIWu/f549btBeG3Q8TkJmzrZUM="><script defer src=/zh.search.min.1a1db22e5dae8077faea358aa5377082cf4e6f68a7dd80b9e1a4909ccf67ee40.js integrity="sha256-Gh2yLl2ugHf66jWKpTdwgs9Ob2in3YC54aSQnM9n7kA="></script><script defer src=/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js integrity="sha256-dKi7B/C+6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-138235951-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/zh><span>Lomorage文档</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Highlight/>功能</a><ul></ul></li><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Installation/>安装</a><ul><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/>Lomorage照片助手</a><ul><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-raspbian/>Raspbian</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/>Armbian</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-ubuntu/>Ubuntu</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/>Windows</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/>OSX</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/ class=active>Docker</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-openwrt/>Openwrt</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-unraid/>Unraid</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-synology/>群晖</a></li></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/>Lomorage客户端</a><ul><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-ios/>iOS</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-android/>Andriod</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-web/>Web</a></li></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomo-frame/>Lomorage相框</a><ul></ul></li><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-importer/>导入工具</a><ul></ul></li></ul></li><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Usage/>使用说明</a><ul><li><a href=https://docs.lomorage.com/zh/docs/Usage/lomorage-client/>命令行工具</a><ul></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Usage/Update/>手工升级Lomoarge后台系统</a><ul></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Usage/external-access/>外网访问</a><ul></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Usage/customized-view/>自定义视图</a><ul></ul></li></ul></li><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Roadmap/>产品路线图</a><ul></ul></li></ul><ul><li><a href=https://github.com/lomorage/homepage target=_blank rel=noopener>Github</a></li><li><a href=https://lomorage.com target=_blank rel=noopener>主页</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
-<strong>Docker</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#docker安装>Docker安装</a></li></ul></nav></aside></header><article class=markdown><h1 id=docker安装>Docker安装
-<a class=anchor href=#docker%e5%ae%89%e8%a3%85>#</a></h1><p>请参考
-<a href=https://github.com/lomorage/lomo-docker>lomo-docker</a>安装Docker镜像。您可以根据你的CPU架构选择使用arm的镜像"lomorage/raspberrypi-lomorage:latest"，或者amd64的镜像"lomorage/amd64-lomorage:latest"</p><p>下面是在Raspberry Pi OS (64-bit)桌面版上安装的例子.</p><p>docker-compose.yml:</p><pre><code>version: &quot;3.9&quot;
+version: "3.9"
 services:
   lomo:
     image: ${IMG}
@@ -38,7 +33,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: lomorage --cleanup
-</code></pre><p>.env文件:</p><pre><code>IMG=lomorage/arm64-lomorage:latest
+.env文件:
+IMG=lomorage/arm64-lomorage:latest
 AUTO_UPDATE_IMG=containrrr/watchtower:arm64v8-latest
 
 # IMG=lomorage/amd64-lomorage:latest
@@ -47,9 +43,64 @@ AUTO_UPDATE_IMG=containrrr/watchtower:arm64v8-latest
 LOMOD_PORT=8000
 
 # change the directories in your env
-HOME_MEDIA_DIR=&quot;/media/jeromy/My Passport1&quot;
-HOME_MEDIA_BAKUP_DIR=&quot;/media/jeromy/My Passport&quot;
-HOME_LOMO_DIR=&quot;/home/jeromy/lomo&quot;
+HOME_MEDIA_DIR="/media/jeromy/My Passport1"
+HOME_MEDIA_BAKUP_DIR="/media/jeromy/My Passport"
+HOME_LOMO_DIR="/home/jeromy/lomo"
+
+# mdns works in vlan, change vlan settings in your env
+NETWORK_TYPE=ipvlan # macvlan
+NETWORK_INF=eth0
+SUBNET=192.168.1.0/24
+GATEWAY=192.168.1.1
+VLAN_ADDR=192.168.1.79
+启动服务docker-compose up -d，然后通过手机APP创建用户和密码登录。'><meta name=theme-color content="#FFFFFF"><meta property="og:url" content="https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/"><meta property="og:site_name" content="Lomorage文档"><meta property="og:title" content="Docker"><meta property="og:description" content='Docker安装 # 请参考 lomo-docker安装Docker镜像。您可以根据你的CPU架构选择使用arm的镜像"lomorage/raspberrypi-lomorage:latest"，或者amd64的镜像"lomorage/amd64-lomorage:latest"
+下面是在Raspberry Pi OS (64-bit)桌面版上安装的例子.
+docker-compose.yml:
+version: "3.9" services: lomo: image: ${IMG} container_name: lomorage privileged: true environment: - LOMOD_DISABLE_MOUNT_MONITOR=1 cap_add: - ALL volumes: - ${HOME_MEDIA_DIR}:/media/WD_36AA8D42AA8D001B - ${HOME_MEDIA_BAKUP_DIR}:/media/WD_90C27F73C27F5C82 - ${HOME_LOMO_DIR}:/lomo - /dev:/dev ports: - ${LOMOD_PORT}:${LOMOD_PORT} - 8004:8004 command: $LOMOD_PORT watchtower: image: ${AUTO_UPDATE_IMG} container_name: watchtower restart: always volumes: - /var/run/docker.sock:/var/run/docker.sock command: lomorage --cleanup .env文件:
+IMG=lomorage/arm64-lomorage:latest AUTO_UPDATE_IMG=containrrr/watchtower:arm64v8-latest # IMG=lomorage/amd64-lomorage:latest # AUTO_UPDATE_IMG=containrrr/watchtower:amd64-latest LOMOD_PORT=8000 # change the directories in your env HOME_MEDIA_DIR="/media/jeromy/My Passport1" HOME_MEDIA_BAKUP_DIR="/media/jeromy/My Passport" HOME_LOMO_DIR="/home/jeromy/lomo" # mdns works in vlan, change vlan settings in your env NETWORK_TYPE=ipvlan # macvlan NETWORK_INF=eth0 SUBNET=192.168.1.0/24 GATEWAY=192.168.1.1 VLAN_ADDR=192.168.1.79 启动服务docker-compose up -d，然后通过手机APP创建用户和密码登录。'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-10-16T11:12:43-07:00"><title>Docker | Lomorage文档</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=alternate hreflang=en href=https://docs.lomorage.com/docs/Installation/lomorage-service/installation-docker/ title=Docker><link rel=stylesheet href=/book.min.738334e1f08e565875cb25fb4b16c0192754d89a98b2c5001154e2499b8ef829.css integrity="sha256-c4M04fCOVlh1yyX7SxbAGSdU2JqYssUAEVTiSZuO+Ck="><script defer src=/zh.search.min.8dd21322089be4c682bd781d27e4e9c1b91572624bc66afb6edc4fcf083772fe.js integrity="sha256-jdITIgib5MaCvXgdJ+TpwbkVcmJLxmr7btxPzwg3cv4="></script><script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js integrity="sha256-b2+Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC+NdcPIvZhzk="></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/zh><span>Lomorage文档</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=搜索 aria-label=搜索 maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Highlight/>功能</a><ul></ul></li><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Installation/>安装</a><ul><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/>Lomorage照片助手</a><ul><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-raspbian/>Raspbian</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-armbian/>Armbian</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-ubuntu/>Ubuntu</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-win/>Windows</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-osx/>OSX</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/ class=active>Docker</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-openwrt/>Openwrt</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-unraid/>Unraid</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-synology/>群晖</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-fedora/>Fedora</a></li></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/>Lomorage客户端</a><ul><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-ios/>iOS</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-android/>Andriod</a></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-client/installation-web/>Web</a></li></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Installation/lomo-frame/>Lomorage相框</a><ul></ul></li><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Installation/lomorage-importer/>导入工具</a><ul></ul></li></ul></li><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Usage/>使用说明</a><ul><li><a href=https://docs.lomorage.com/zh/docs/Usage/lomorage-client/>命令行工具</a><ul></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Usage/Update/>手工升级Lomoarge后台系统</a><ul></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Usage/external-access/>外网访问</a><ul></ul></li><li><a href=https://docs.lomorage.com/zh/docs/Usage/customized-view/>自定义视图</a><ul></ul></li></ul></li><li class=book-section-flat><a href=https://docs.lomorage.com/zh/docs/Roadmap/>产品路线图</a><ul></ul></li></ul><ul><li><a href=https://github.com/lomorage/homepage target=_blank rel=noopener>Github</a></li><li><a href=https://lomorage.com target=_blank rel=noopener>主页</a></li></ul></nav><script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>Docker</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#docker安装>Docker安装</a></li></ul></nav></aside></header><article class=markdown><h1 id=docker安装>Docker安装
+<a class=anchor href=#docker%e5%ae%89%e8%a3%85>#</a></h1><p>请参考
+<a href=https://github.com/lomorage/lomo-docker>lomo-docker</a>安装Docker镜像。您可以根据你的CPU架构选择使用arm的镜像"lomorage/raspberrypi-lomorage:latest"，或者amd64的镜像"lomorage/amd64-lomorage:latest"</p><p>下面是在Raspberry Pi OS (64-bit)桌面版上安装的例子.</p><p>docker-compose.yml:</p><pre tabindex=0><code>version: &#34;3.9&#34;
+services:
+  lomo:
+    image: ${IMG}
+    container_name: lomorage
+    privileged: true
+    environment:
+      - LOMOD_DISABLE_MOUNT_MONITOR=1
+    cap_add:
+      - ALL
+    volumes:
+      - ${HOME_MEDIA_DIR}:/media/WD_36AA8D42AA8D001B
+      - ${HOME_MEDIA_BAKUP_DIR}:/media/WD_90C27F73C27F5C82
+      - ${HOME_LOMO_DIR}:/lomo
+      - /dev:/dev
+    ports:
+      - ${LOMOD_PORT}:${LOMOD_PORT}
+      - 8004:8004
+    command: $LOMOD_PORT
+
+  watchtower:
+    image: ${AUTO_UPDATE_IMG}
+    container_name: watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: lomorage --cleanup
+</code></pre><p>.env文件:</p><pre tabindex=0><code>IMG=lomorage/arm64-lomorage:latest
+AUTO_UPDATE_IMG=containrrr/watchtower:arm64v8-latest
+
+# IMG=lomorage/amd64-lomorage:latest
+# AUTO_UPDATE_IMG=containrrr/watchtower:amd64-latest
+
+LOMOD_PORT=8000
+
+# change the directories in your env
+HOME_MEDIA_DIR=&#34;/media/jeromy/My Passport1&#34;
+HOME_MEDIA_BAKUP_DIR=&#34;/media/jeromy/My Passport&#34;
+HOME_LOMO_DIR=&#34;/home/jeromy/lomo&#34;
 
 # mdns works in vlan, change vlan settings in your env
 NETWORK_TYPE=ipvlan # macvlan
@@ -60,7 +111,6 @@ VLAN_ADDR=192.168.1.79
 </code></pre><p>启动服务<code>docker-compose up -d</code>，然后通过手机APP创建用户和密码登录。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div class=book-languages tabindex=0 aria-haspopup=true><ul><li class="flex align-center"><img src=/svg/translate.svg class=book-icon alt=Languages>
 中文</li></ul><ul class=book-languages-list><li><a href=https://docs.lomorage.com/docs/Installation/lomorage-service/installation-docker/ class="flex align-center"><img src=/svg/translate.svg class=book-icon alt=Languages>
 English</a></li><li class=active><a href=https://docs.lomorage.com/zh/ class="flex align-center"><img src=/svg/translate.svg class=book-icon alt=Languages>
-中文</a></li></ul></div><div><a class="flex align-center" href=https://github.com/lomodoc/homepage/commit/491467774a02ba9436845cea7ffea3d55c7bcfac title="最后修改者 Jeormy Fu | October 16, 2022" target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>October 16, 2022</span></a></div><div><a class="flex align-center" href=https://github.com/lomodoc/homepage/edit/main/content.zh/docs/Installation/lomorage-service/installation-docker.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
-<span>编辑本页</span></a></div></div></footer><div class=book-comments><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
-var d=document,s=d.createElement('script');s.async=true;s.src='//'+"lomorage"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#docker安装>Docker安装</a></li></ul></nav></div></aside></main></body></html>
+中文</a></li></ul></div><div><a class="flex align-center" href=https://github.com/lomodoc/homepage/commit/491467774a02ba9436845cea7ffea3d55c7bcfac title='最后修改者 Jeormy Fu | October 16, 2022' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>October 16, 2022</span></a></div><div><a class="flex align-center" href=https://github.com/lomodoc/homepage/edit/main//docs/Installation/lomorage-service/installation-docker.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>编辑本页</span></a></div></div></footer><div class=book-comments><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//lomorage.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#docker安装>Docker安装</a></li></ul></nav></div></aside></main></body></html>
