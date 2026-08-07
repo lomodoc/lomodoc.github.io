@@ -296,4 +296,54 @@ licensing, so
 &lt;/h2&gt;
 &lt;p&gt;Unlike Debian/Ubuntu, &lt;code&gt;lomo-vips&lt;/code&gt; isn&amp;rsquo;t a separate package on Fedora &amp;ndash;
 &lt;code&gt;vips&lt;/code&gt; is available directly from Fedora&amp;rsquo;s own repos and pulled in
-automatically.&lt;/p&gt;</description></item></channel></rss>
+automatically.&lt;/p&gt;</description></item><item><title>Rocky Linux 9</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-rocky9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-rocky9/</guid><description>&lt;h1 id="install-lomorage-photo-assistant-on-rocky-linux-9"&gt;
+ Install &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; on Rocky Linux 9
+ &lt;a class="anchor" href="#install-lomorage-photo-assistant-on-rocky-linux-9"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Currently we only support x86/AMD64 Rocky Linux 9 (and RHEL/AlmaLinux 9, which share the same package format).&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="1-enable-epel-and-rpm-fusion"&gt;
+ 1. Enable EPEL and RPM Fusion
+ &lt;a class="anchor" href="#1-enable-epel-and-rpm-fusion"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;perl-Image-ExifTool&lt;/code&gt; needs 
+ &lt;a href="https://docs.fedoraproject.org/en-US/epel/"&gt;EPEL&lt;/a&gt;, and &lt;code&gt;ffmpeg&lt;/code&gt; (needed for video processing) needs 
+ &lt;a href="https://rpmfusion.org/"&gt;RPM Fusion&lt;/a&gt; &amp;ndash; neither is in the base repos:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install epel-release -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-9.noarch.rpm -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="2-add-lomoware-source"&gt;
+ 2. Add lomoware source
+ &lt;a class="anchor" href="#2-add-lomoware-source"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo tee /etc/yum.repos.d/lomoware.repo &amp;gt; /dev/null &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;&amp;#39;EOF&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;[lomoware-rocky9]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;name=Lomoware Rocky Linux 9 Repository
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;baseurl=https://lomoware.lomorage.com/rpm/rocky9
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;enabled=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;gpgcheck=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;gpgkey=https://lomoware.lomorage.com/rpm/rocky9/repodata/repomd.xml.key
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="3-install-lomorage"&gt;
+ 3. Install Lomorage
+ &lt;a class="anchor" href="#3-install-lomorage"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Unlike Fedora, Rocky 9&amp;rsquo;s base repos don&amp;rsquo;t have &lt;code&gt;vips&lt;/code&gt; at all, so &lt;code&gt;lomo-vips&lt;/code&gt;
+(built from source) is required here, same as Debian/Ubuntu.&lt;/p&gt;</description></item><item><title>openSUSE Leap</title><link>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-opensuse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/docs/Installation/lomorage-service/installation-opensuse/</guid><description>&lt;h1 id="install-lomorage-photo-assistant-on-opensuse-leap"&gt;
+ Install &amp;ldquo;Lomorage Photo Assistant&amp;rdquo; on openSUSE Leap
+ &lt;a class="anchor" href="#install-lomorage-photo-assistant-on-opensuse-leap"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Currently we only support x86/AMD64 openSUSE Leap (current release).&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="1-add-lomoware-source"&gt;
+ 1. Add lomoware source
+ &lt;a class="anchor" href="#1-add-lomoware-source"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo zypper addrepo --refresh https://lomoware.lomorage.com/rpm/opensuse/lomoware.repo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo zypper --gpg-auto-import-keys refresh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="2-install-lomorage"&gt;
+ 2. Install Lomorage
+ &lt;a class="anchor" href="#2-install-lomorage"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Like Rocky Linux, openSUSE Leap&amp;rsquo;s base repos don&amp;rsquo;t have &lt;code&gt;vips&lt;/code&gt; at a usable
+version, so &lt;code&gt;lomo-vips&lt;/code&gt; (built from source) is required, same as
+Debian/Ubuntu/Rocky.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo zypper install lomo-vips lomo-backend
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Make sure the user can sudo without password, if not, execute the following command to add it:&lt;/p&gt;</description></item></channel></rss>

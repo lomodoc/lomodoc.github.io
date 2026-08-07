@@ -669,4 +669,83 @@ VCEI exceptions		: not available
  4.1 修改磁盘mount目录
  &lt;a class="anchor" href="#41-%e4%bf%ae%e6%94%b9%e7%a3%81%e7%9b%98mount%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;
 &lt;/h4&gt;
-&lt;p&gt;如果USB磁盘没有加载到&amp;quot;/media&amp;quot;路径下，您需要指定加载目录。&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;如果USB磁盘没有加载到&amp;quot;/media&amp;quot;路径下，您需要指定加载目录。&lt;/p&gt;</description></item><item><title>Rocky Linux 9</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-rocky9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-rocky9/</guid><description>&lt;h1 id="在rocky-linux-9上安装lomorage照片助手"&gt;
+ 在Rocky Linux 9上安装&amp;quot;Lomorage照片助手&amp;quot;
+ &lt;a class="anchor" href="#%e5%9c%a8rocky-linux-9%e4%b8%8a%e5%ae%89%e8%a3%85lomorage%e7%85%a7%e7%89%87%e5%8a%a9%e6%89%8b"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;当前我们只支持x86/AMD64 Rocky Linux 9（以及包格式相同的RHEL/AlmaLinux 9）。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="1-启用-epel-和-rpm-fusion"&gt;
+ 1. 启用 EPEL 和 RPM Fusion
+ &lt;a class="anchor" href="#1-%e5%90%af%e7%94%a8-epel-%e5%92%8c-rpm-fusion"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;perl-Image-ExifTool&lt;/code&gt;需要
+ &lt;a href="https://docs.fedoraproject.org/en-US/epel/"&gt;EPEL&lt;/a&gt;，&lt;code&gt;ffmpeg&lt;/code&gt;（视频处理需要）需要
+
+ &lt;a href="https://rpmfusion.org/"&gt;RPM Fusion&lt;/a&gt;，两者都不在默认源中：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install epel-release -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install https://download1.rpmfusion.org/free/el/rpmfusion-free-release-9.noarch.rpm -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="2-安装lomoware源"&gt;
+ 2. 安装lomoware源
+ &lt;a class="anchor" href="#2-%e5%ae%89%e8%a3%85lomoware%e6%ba%90"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo tee /etc/yum.repos.d/lomoware.repo &amp;gt; /dev/null &lt;span style="color:#e6db74"&gt;&amp;lt;&amp;lt;&amp;#39;EOF&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;[lomoware-rocky9]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;name=Lomoware Rocky Linux 9 Repository
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;baseurl=https://lomoware.lomorage.com/rpm/rocky9
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;enabled=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;gpgcheck=1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;gpgkey=https://lomoware.lomorage.com/rpm/rocky9/repodata/repomd.xml.key
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="3-安装lomorage"&gt;
+ 3. 安装Lomorage
+ &lt;a class="anchor" href="#3-%e5%ae%89%e8%a3%85lomorage"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;和Fedora不同，Rocky 9的默认源里完全没有&lt;code&gt;vips&lt;/code&gt;，所以这里需要用从源码编译的
+&lt;code&gt;lomo-vips&lt;/code&gt;，和Debian/Ubuntu的情况一样。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo dnf install lomo-vips lomo-backend -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;确保当前用户sudo不用密码, 如果不行，可以通过下面的命令添加:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$USER&lt;span style="color:#e6db74"&gt; ALL=(ALL:ALL) NOPASSWD: ALL&amp;#34;&lt;/span&gt; | sudo tee /etc/sudoers.d/$USER
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="4-按需修改运行参数"&gt;
+ 4. 按需修改运行参数
+ &lt;a class="anchor" href="#4-%e6%8c%89%e9%9c%80%e4%bf%ae%e6%94%b9%e8%bf%90%e8%a1%8c%e5%8f%82%e6%95%b0"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;用户可以在&amp;quot;/opt/lomorage/etc/environment&amp;quot;设置环境变量来修改某些运行参数。用户可以根据自己实际情况加以调整。&lt;/p&gt;</description></item><item><title>openSUSE Leap</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-opensuse/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-opensuse/</guid><description>&lt;h1 id="在opensuse-leap上安装lomorage照片助手"&gt;
+ 在openSUSE Leap上安装&amp;quot;Lomorage照片助手&amp;quot;
+ &lt;a class="anchor" href="#%e5%9c%a8opensuse-leap%e4%b8%8a%e5%ae%89%e8%a3%85lomorage%e7%85%a7%e7%89%87%e5%8a%a9%e6%89%8b"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;当前我们只支持x86/AMD64 openSUSE Leap（当前发行版）。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="1-安装lomoware源"&gt;
+ 1. 安装lomoware源
+ &lt;a class="anchor" href="#1-%e5%ae%89%e8%a3%85lomoware%e6%ba%90"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo zypper addrepo --refresh https://lomoware.lomorage.com/rpm/opensuse/lomoware.repo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo zypper --gpg-auto-import-keys refresh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="2-安装lomorage"&gt;
+ 2. 安装Lomorage
+ &lt;a class="anchor" href="#2-%e5%ae%89%e8%a3%85lomorage"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;和Rocky Linux类似，openSUSE Leap的默认源里没有可用版本的&lt;code&gt;vips&lt;/code&gt;，所以这里
+也需要用从源码编译的&lt;code&gt;lomo-vips&lt;/code&gt;，和Debian/Ubuntu/Rocky的情况一样。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo zypper install lomo-vips lomo-backend
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;确保当前用户sudo不用密码, 如果不行，可以通过下面的命令添加:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;$USER&lt;span style="color:#e6db74"&gt; ALL=(ALL:ALL) NOPASSWD: ALL&amp;#34;&lt;/span&gt; | sudo tee /etc/sudoers.d/$USER
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="3-按需修改运行参数"&gt;
+ 3. 按需修改运行参数
+ &lt;a class="anchor" href="#3-%e6%8c%89%e9%9c%80%e4%bf%ae%e6%94%b9%e8%bf%90%e8%a1%8c%e5%8f%82%e6%95%b0"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;用户可以在&amp;quot;/opt/lomorage/etc/environment&amp;quot;设置环境变量来修改某些运行参数。用户可以根据自己实际情况加以调整。&lt;/p&gt;
+&lt;h4 id="31-修改磁盘mount目录"&gt;
+ 3.1 修改磁盘mount目录
+ &lt;a class="anchor" href="#31-%e4%bf%ae%e6%94%b9%e7%a3%81%e7%9b%98mount%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;
+&lt;/h4&gt;
+&lt;p&gt;如果USB磁盘没有加载到&amp;quot;/media&amp;quot;路径下，您需要指定加载目录。&lt;/p&gt;
+&lt;p&gt;要指定加载目录&amp;quot;/media/pi&amp;quot;, 请添加环境变量&lt;code&gt;LOMOD_MOUNT_DIR=/media/pi&lt;/code&gt;在&lt;code&gt;/opt/lomorage/etc/environment&lt;/code&gt;，比如&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;echo &amp;#34;LOMOD_MOUNT_DIR=/media/pi&amp;#34; | tee -a /opt/lomorage/etc/environment
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;请确保您的用户有上面设置的&amp;quot;mount-dir&amp;quot;的读写权限, 另外改参数必须是mount的父目录，比如mount到&amp;quot;/media/pi/disk0&amp;quot;下面，就必须指定为&amp;quot;/media/pi&amp;quot;&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="32-http-监听端口"&gt;
+ 3.2 HTTP 监听端口
+ &lt;a class="anchor" href="#32-http-%e7%9b%91%e5%90%ac%e7%ab%af%e5%8f%a3"&gt;#&lt;/a&gt;
+&lt;/h4&gt;
+&lt;p&gt;Lomod缺省监听端口是8000，如果需要自定义，清使用环境变量&lt;code&gt;LOMOD_PORT_HTTP&lt;/code&gt;，比如&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;echo &amp;#34;LOMOD_PORT_HTTP=8888&amp;#34; | tee -a /opt/lomorage/etc/environment
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;另外的方案是&lt;code&gt;cp /lib/systemd/system/lomod.service /etc/systemd/system/lomod.service&lt;/code&gt;，然后编辑&amp;quot;/etc/systemd/system/lomod.service&amp;quot;，修改&amp;quot;ExecStart&amp;quot;指定要用的参数(运行&lt;code&gt;/opt/lomorage/bin/lomod -h&lt;/code&gt;查看可用的参数)，然后运行&lt;code&gt;sudo systemctl daemon-reload&lt;/code&gt;之后，就会使用&amp;quot;/etc/systemd/system/lomod.service&amp;quot;的配置了。 &amp;ldquo;/lib/systemd/system/lomod.service&amp;quot;在升级时会被覆盖。&lt;/p&gt;</description></item></channel></rss>
