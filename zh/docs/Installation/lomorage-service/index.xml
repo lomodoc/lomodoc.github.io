@@ -264,7 +264,14 @@ http://B机器的ip:端口号。
 &lt;p class="screenshoot"&gt;
  &lt;img width="50%" src="https://docs.lomorage.com/img/installation/osx-lomo-agent.png"&gt;
 &lt;/p&gt;
-&lt;/div&gt;</description></item><item><title>Docker</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/</guid><description>&lt;h1 id="docker安装"&gt;
+&lt;/div&gt;
+&lt;h2 id="5-高级选项命令行安装"&gt;
+ 5. 高级选项：命令行安装
+ &lt;a class="anchor" href="#5-%e9%ab%98%e7%ba%a7%e9%80%89%e9%a1%b9%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%ae%89%e8%a3%85"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;喜欢用命令行？这将只安装 lomod 后端服务（无图形界面）到你的用户目录下，无需管理员权限。打开&amp;quot;终端&amp;quot;并运行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;curl -fsSL https://lomosw.lomorage.com/mac/install.sh | bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Docker</title><link>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.lomorage.com/zh/docs/Installation/lomorage-service/installation-docker/</guid><description>&lt;h1 id="docker安装"&gt;
  Docker安装
  &lt;a class="anchor" href="#docker%e5%ae%89%e8%a3%85"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
