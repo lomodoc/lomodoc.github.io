@@ -94,16 +94,22 @@ echo &#34;LOMOD_PORT_HTTP=8888&#34; | tee -a /opt/lomorage/etc/environment Anoth
 If you are using &ldquo;Lomorage Photo Assistant&rdquo; in MacOS, then you can just click &ldquo;Web Access&rdquo; menu item in Lomorage Photo Assistant Application, and it will open the web application.
 If you are using &ldquo;Lomorage Photo Assistant&rdquo; in Raspberry Pi, you can open &ldquo; http://raspberrypi-lomorage.local:8000&rdquo; in the browser on your desktop/laptop to use Lomorage web client.
 The login username and password is the Lomorage Username/Password set using Phone APP
-`}),e.add({id:9,href:"/docs/Installation/lomorage-service/installation-win/",title:"Windows",section:"Lomorage Photo Assistant",content:` Install &ldquo;Lomorage Photo Assistant&rdquo; on Windows # 1. Download # Click the Windows icon link below to download &ldquo;Lomorage Photo Assistant&rdquo; For Windows.
-Click to download ==> Windows 2. Double click &ldquo;lomoagent.msi&rdquo; to start installation. # 3. Follow the wizard # to finish the installation, in the End-User License Agreement, please checked the box as below.
-4. Allow network access # Now you should see the lomoagent icon on your desktop, you can double click to start &ldquo;Lomorage Photo Assistant&rdquo;. If you meet below dialog popuped up by the Windows os, please select &ldquo;Private networks &hellip;&rdquo; one and click the Allow access.
-5. Config data folder # You will see below picture while you start &ldquo;Lomorage Photo Assistant&rdquo;, You need to config the &ldquo;Data directory&rdquo; before using it，&ldquo;Data directory&rdquo; is used to save the photos and videos uploading from your phone.
-6. Open Web Client # The Setting Windows will be hide to your taskbar tray area, normally it is on the right of the task bar like below picture:
-Web client as below picture.
-7. You can access this web interface via http://ip(the ip shown on the Settings Windows) from other device. # 8. if create user failed， please try to turn off Windows Firewall # 9. Advanced: Command Line Install # Prefer scripting it? This installs just the lomod backend (no GUI/tray) to your user profile, no admin rights required. Open PowerShell and run:
-irm https://lomosw.lomorage.com/windows/install.ps1 | iex Enjoy!
-Contact to us: support@lomorage.com
-If you are using HEIC/HEIF format on iPhone, you need to install &ldquo; HEIF Image Extensions&rdquo; and &ldquo; HEVC Video Extensions&rdquo;.
+`}),e.add({id:9,href:"/docs/Installation/lomorage-service/installation-win/",title:"Windows",section:"Lomorage Photo Assistant",content:` Install &ldquo;Lomorage Photo Assistant&rdquo; on Windows # 1. Install # Open PowerShell (no need to run as Administrator) and paste in:
+irm https://lomosw.lomorage.com/windows/install.ps1 | iex This downloads lomod.exe and everything it needs (vips, exiftool, ffmpeg), installs it to your user profile, and starts it — no installer window, no admin rights, no reboot.
+If you&rsquo;re in mainland China and GitHub downloads are slow or fail, set this first so the download goes through an accelerator proxy instead:
+$env:LOMOD_CHINA=1; irm https://lomosw.lomorage.com/windows/install.ps1 | iex If Windows shows a firewall prompt the first time it starts (so your phone can reach it over your local network), choose Private networks and click Allow access.
+2. Data folder # By default, your photos and videos are stored under Pictures\\Lomorage in your own user folder — you don&rsquo;t need to configure anything before using it.
+If you&rsquo;d rather use a different drive or folder (for example an external drive), download the script first instead of piping it straight into iex, then run it with -DataDir:
+irm https://lomosw.lomorage.com/windows/install.ps1 -OutFile install.ps1 ./install.ps1 -DataDir &#34;D:\\Lomorage&#34; Running the installer again like this is also how you re-point an existing install at a new folder — it&rsquo;s safe to re-run any time.
+3. Open Lomorage # A Lomorage icon appears in your Start menu and in the notification area (system tray, at the bottom right of your screen) — double-click either to open the web client in your browser.
+Right-click the tray icon for Start / Stop / Restart, or Quit to close it entirely. If you ever quit it, search for Lomorage in the Start menu to open it again — no need to reinstall.
+4. Access from your phone or another computer # Find the IP address shown for your PC, then from your phone or another device on the same network, open http://&lt;that-ip&gt;:8000 in a browser.
+5. Staying up to date # Lomorage checks for updates once a day in the background and installs them automatically — no action needed. If you&rsquo;d rather update right away, just run the install command from step 1 again; it&rsquo;s safe to re-run and won&rsquo;t touch your photos.
+6. Uninstall # There isn&rsquo;t a one-click uninstaller yet. To remove it completely:
+Right-click the tray icon and choose Quit. Delete the Lomorage.lnk shortcuts from your Start menu and from shell:startup (paste that into the Windows Explorer address bar to jump there). Open Task Scheduler and delete the LomorageUpdate task, if present. Delete the install folder at %LOCALAPPDATA%\\Lomorage\\lomod. Your photos in the data folder from step 2 are not touched by any of this.
+Enjoy!
+Contact us: support@lomorage.com
+If you&rsquo;re using HEIC/HEIF photos or HEVC videos from an iPhone, install the &ldquo; HEIF Image Extensions&rdquo; and &ldquo; HEVC Video Extensions&rdquo; so Windows can preview them.
 `}),e.add({id:10,href:"/docs/Installation/lomorage-service/installation-osx/",title:"OSX",section:"Lomorage Photo Assistant",content:` Install &ldquo;Lomorage Photo Assistant&rdquo; on MacOS # 1. Click the link below to download &ldquo;Lomorage Photo Assistant&rdquo; Application.
 macOS 2. Double click &ldquo;LomoAgent.dmg&rdquo; to start installation, and follow the steps below to finish the installation.
 3. Run &ldquo;Lomorage Photo Assistant&rdquo; Application，please allow network access for &ldquo;Lomorage Photo Assistant&rdquo; if firewall is triggered.

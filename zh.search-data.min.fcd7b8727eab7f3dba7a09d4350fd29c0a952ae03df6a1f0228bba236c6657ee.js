@@ -88,19 +88,23 @@ echo &#34;LOMOD_PORT_HTTP=8888&#34; | tee -a /opt/lomorage/etc/environment 另�
 如果您使用树莓派版本的&quot;Lomorage照片助手&quot;程序, 您可以在电脑的浏览器上访问&quot; http://raspberrypi-lomorage.local:8000&quot;，打开Lomorage网页客户端。
 登陆用户名和密码是您用手机Lomorage APP生成的用户名和密码
 `}),e.add({id:8,href:"/zh/docs/Usage/",title:"使用说明",section:"Docs",content:` 使用说明 # 本章主要介绍&quot;Lomorage照片助手&quot;和命令行软件的一些使用说明，另外还包括其他的一些工具，以及和第三方服务集成的一些说明
-命令行工具 如何从公网访问 `}),e.add({id:9,href:"/zh/docs/Installation/lomorage-service/installation-win/",title:"Windows",section:"Lomorage照片助手",content:` 在Windows上安装&quot;Lomorage照片助手&quot; # 如何升级？ # 下载新的MSI 安装包, 然后直接安装： 安装程序会自动删除老的版本 千万不要用 360 等工具来删除，那样可能会把数据文件删掉！！！
-1. 点击下面的链接安装&quot;Lomorage照片助手&quot;程序。 # 点击下载 ==> Windows 2. 双击&quot;lomoagent.msi&quot;, 点击【下一步】开始安装 # 3. 勾选&quot;最终用户许可协议&quot;后，一路完成安装步骤。 # 4. 双击桌面的“Lomorage照片助手”图标，启动应用程序，如果有防火墙提示，请允许“Lomorage照片助手”访问私有网络。 # 5. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。 # 6. 可以点击托盘图标右键菜单，选择“打开网页客户端程序” 启动网页客户端进行导入和浏览您已经备份的照片！ # 7. 重置用户密码 # 托盘右键菜单，选择 “重置用户密码”，按照界面提示操作。
-8. 高级设置： # 托盘右键菜单 “advances”，打开配置文件，可以配置 网页客户端 端口号。
-{ &#34;autoHideWindow&#34;: false, &#34;autoStartRedundancyBackup&#34;: false, &#34;autoStarted&#34;: false, &#34;enableBackupDir&#34;: true, &#34;isDebug&#34;: false, &#34;mountDir&#34;: &#34;C:\\\\Users\\\\Administrator\\\\Documents\\\\lomodata&#34;, &#34;mountDirBk&#34;: &#34;H:\\\\test-bk&#34;, &#34;port&#34;: 8000, &#34;runAsService&#34;: false, &#34;webport&#34;: 8003 // 网页客户端端口号 } 您可以在另一台同网络内的机器（比如A机器）上访问该服务器B（安装了&quot;Lomorage照片助手&quot;的电脑为B），可以在A机器上的浏览器输入： http://B机器的ip:端口号。 比如： B 服务器的IP地址是 192.168.0.40,端口号8000。则输入：http://192.168.0.40:8000
-9. 常见问题 # 9.1 安装之后，启动不了？ # 请检查一下是不是中文的用户名，如果是，把&quot;Lomorage照片助手&quot;装在一个英文目录名下。【该问题已经修复，还没发布！】
-9.2 怎么查看&quot;Lomorage照片助手&quot;版本和系统信息 # 在windows 系统托盘区，找到Lomorage图标，右键菜单，点击 关于 菜单
-点击 查看&quot;Lomorage照片助手&quot;系统信息 会打开浏览器显示&quot;Lomorage照片助手&quot;的系统信息。
-9.3 &ldquo;Lomorage照片助手&quot;启动了，用手机创建账号，显示如下错误，怎么办？ # 解决方法：
-请检查 Windows 机器是不是有多块网卡，把不用的虚拟网卡禁止掉，确保手机和Windows 机器连的是同一个网络：一般IPV4 地址是 192 开头。 然后重新创建账号！ 如果上面的方法不行，请尝试 关闭Windows的防火墙 试试！ 参考链接:如何关闭windows防火墙 9.4 &ldquo;Lomorage照片助手&quot;的 数据（DB） 文件在哪里： # 在windows 系统托盘区，找到Lomorage图标，右键菜单，点击 其他&mdash;&raquo; 打开Lomod目录. var目录下的 assets.db 就是&quot;Lomorage照片助手&quot;的db文件，这个文件很重要，不能删除。
-默认路径： C:\\Users\\%username%\\AppData\\Local\\lomoware\\var\\assets.db 9.5 怎么迁移数据？比如 原先保存的照片在 c：\\lomorage ,现在想移到 d:\\lomorage # 直接在 Lomorage的设置与控制面板里更改主目录,如下图所示, 程序会提醒您目录改变，迁移过程需要点时间： （把数据从老目录复制到新目录，并更改数据库文件）
-10. 还有问题，扫码加微信哦 # 如果您用苹果手机拍摄使用的HEVC/HEIF格式，请下载HEVC/HEIF扩展插件，参考https://blog.csdn.net/weixin_43168190/article/details/117698977
-11. 高级选项：命令行安装 # 喜欢用命令行？这将只安装 lomod 后端服务（无图形界面/托盘图标）到你的用户目录下，无需管理员权限。打开 PowerShell 并运行（下载安装包时会走 gfw.lomorage.com 加速代理）：
-$env:LOMOD_CHINA=1; irm https://lomosw.lomorage.com/windows/install.ps1 | iex `}),e.add({id:10,href:"/zh/docs/Installation/lomorage-service/installation-osx/",title:"OSX",section:"Lomorage照片助手",content:` 在MacOS上安装&quot;Lomorage照片助手&quot;程序 # 1. 点击下面的链接安装&quot;Lomorage照片助手&quot;程序。
+命令行工具 如何从公网访问 `}),e.add({id:9,href:"/zh/docs/Installation/lomorage-service/installation-win/",title:"Windows",section:"Lomorage照片助手",content:` 在Windows上安装&quot;Lomorage照片助手&quot; # 1. 安装 # 打开 PowerShell（不需要以管理员身份运行），粘贴执行：
+irm https://lomosw.lomorage.com/windows/install.ps1 | iex 这会自动下载 lomod.exe 以及它需要的所有组件（vips、exiftool、ffmpeg），安装到你自己的用户目录下并启动——没有安装向导窗口，不需要管理员权限，也不需要重启电脑。
+如果你在国内，GitHub 下载比较慢或者失败，可以先设置这个环境变量，让下载走加速代理：
+$env:LOMOD_CHINA=1; irm https://lomosw.lomorage.com/windows/install.ps1 | iex 如果第一次启动时 Windows 弹出防火墙提示（这样你的手机才能在局域网内访问它），请选择 专用网络（Private networks），点击 允许访问。
+2. 数据目录 # 默认情况下，你的照片和视频会存储在你自己用户目录下的 Pictures\\Lomorage 文件夹里——不需要额外配置就能直接使用。
+如果你想用别的磁盘或文件夹（比如外接硬盘），不要直接用 irm ... | iex 这种一行命令，而是先把脚本下载下来，再带上 -DataDir 参数运行：
+irm https://lomosw.lomorage.com/windows/install.ps1 -OutFile install.ps1 ./install.ps1 -DataDir &#34;D:\\Lomorage&#34; 以后想把已安装的实例改到新目录，也是用同样的方式重新运行安装脚本——可以随时安全地重复运行。
+3. 打开 Lomorage # 安装完成后，&ldquo;开始&quot;菜单和系统托盘（屏幕右下角）都会出现一个 Lomorage 图标——双击任意一个都可以在浏览器里打开网页客户端。
+在托盘图标上右键，可以看到 Start / Stop / Restart（启动/停止/重启），或者选择 Quit 完全退出。如果不小心退出了，去&quot;开始&quot;菜单搜索 Lomorage 就能重新打开，不需要重新安装。
+4. 从手机或其他电脑访问 # 找到这台电脑的 IP 地址，然后在同一网络下的手机或其他设备浏览器里打开 http://这台电脑的IP:8000。
+5. 自动更新 # Lomorage 每天会在后台自动检查并安装新版本，不需要任何操作。如果你想立刻更新，直接重新执行第 1 步的安装命令即可——可以安全地重复运行，不会影响你的照片。
+6. 卸载 # 目前还没有一键卸载工具，如果需要完全移除：
+在托盘图标上右键，选择 Quit。 删除&quot;开始&quot;菜单里的 Lomorage.lnk 快捷方式，以及 shell:startup（在文件资源管理器地址栏粘贴这个可以直接跳转过去）里的那个。 打开&quot;任务计划程序&rdquo;（Task Scheduler），如果有 LomorageUpdate 任务，删除它。 删除安装目录 %LOCALAPPDATA%\\Lomorage\\lomod。 第 2 步里数据目录中的照片不会受以上任何步骤影响。
+Enjoy!
+联系我们: support@lomorage.com
+如果您用苹果手机拍摄使用的HEVC/HEIF格式，请安装 &ldquo; HEIF Image Extensions&rdquo; 和 &ldquo; HEVC Video Extensions&rdquo; 这样 Windows 才能正常预览。
+7. 还有问题，扫码加微信哦 # `}),e.add({id:10,href:"/zh/docs/Installation/lomorage-service/installation-osx/",title:"OSX",section:"Lomorage照片助手",content:` 在MacOS上安装&quot;Lomorage照片助手&quot;程序 # 1. 点击下面的链接安装&quot;Lomorage照片助手&quot;程序。
 macOS 2. 双击&quot;LomoAgent.dmg&quot;开始安装，参考下面步骤完成安装。
 3. 运行应用程序“Lomorage照片助手”，如果有防火墙提示，请允许“Lomorage照片助手”访问网络。
 4. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。除此之前您也可以再多选择一个冗余备份目录，系统会每天定时进行冗余备份。
