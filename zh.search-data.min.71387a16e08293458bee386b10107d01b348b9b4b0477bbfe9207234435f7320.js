@@ -103,7 +103,7 @@ irm https://lomosw.lomorage.com/windows/install.ps1 -OutFile install.ps1 ./insta
 在托盘图标上右键，选择 Quit。 删除&quot;开始&quot;菜单里的 Lomorage.lnk 快捷方式，以及 shell:startup（在文件资源管理器地址栏粘贴这个可以直接跳转过去）里的那个。 打开&quot;任务计划程序&rdquo;（Task Scheduler），如果有 LomorageUpdate 任务，删除它。 删除安装目录 %LOCALAPPDATA%\\Lomorage\\lomod。 第 2 步里数据目录中的照片不会受以上任何步骤影响。
 Enjoy!
 联系我们: support@lomorage.com
-关于苹果手机的 HEIC 照片 / HEVC 视频： Lomorage 网页客户端在你查看时会自动把它们转换成浏览器能直接播放的格式，不需要额外安装任何东西。下面这两个扩展插件只在你同时想让 Windows 资源管理器/照片应用直接显示数据目录里原始文件的缩略图时才需要，安装 &ldquo; HEIF Image Extensions&rdquo; 和 &ldquo; HEVC Video Extensions&rdquo; 即可。 7. 还有问题，扫码加微信哦 # `}),e.add({id:10,href:"/zh/docs/Installation/lomorage-service/installation-osx/",title:"OSX",section:"Lomorage照片助手",content:` 在MacOS上安装&quot;Lomorage照片助手&quot;程序 # 1. 点击下面的链接安装&quot;Lomorage照片助手&quot;程序。
+关于苹果手机的 HEIC 照片 / HEVC 视频： Lomorage 网页客户端在你查看时会自动把它们转换成浏览器能直接播放的格式，光是这一点不需要额外安装任何东西。但原始文件在磁盘上——包括数据目录里的，以及你从 Lomorage 下载下来（而不是在网页里查看）的——仍然是 HEIC/HEVC 格式。如果你想让 Windows 资源管理器/照片应用（不管是这台电脑还是其他电脑）能正常显示或播放这些原始文件，安装 &ldquo; HEIF Image Extensions&rdquo; 和 &ldquo; HEVC Video Extensions&rdquo; 即可。 7. 还有问题，扫码加微信哦 # `}),e.add({id:10,href:"/zh/docs/Installation/lomorage-service/installation-osx/",title:"OSX",section:"Lomorage照片助手",content:` 在MacOS上安装&quot;Lomorage照片助手&quot;程序 # 1. 点击下面的链接安装&quot;Lomorage照片助手&quot;程序。
 macOS 2. 双击&quot;LomoAgent.dmg&quot;开始安装，参考下面步骤完成安装。
 3. 运行应用程序“Lomorage照片助手”，如果有防火墙提示，请允许“Lomorage照片助手”访问网络。
 4. 程序启动后，您需要设置数据目录才能正常使用，数据目录用来存储您的手机上传的照片视频。除此之前您也可以再多选择一个冗余备份目录，系统会每天定时进行冗余备份。
